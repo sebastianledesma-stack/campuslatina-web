@@ -1,6 +1,10 @@
 # Campus Latina — configuración Netlify
 # Headers de seguridad y cache. Editar con cuidado.
 
+# Publicación desde el repo: sin build, se publica la raíz.
+[build]
+  publish = "."
+
 # ---------------------------------------------------------------
 # Headers de seguridad (aplican a todo el sitio)
 # ---------------------------------------------------------------
