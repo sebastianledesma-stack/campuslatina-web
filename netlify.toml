@@ -1,0 +1,68 @@
+# Campus Latina — configuración Netlify
+# Headers de seguridad y cache. Editar con cuidado.
+
+# ---------------------------------------------------------------
+# Headers de seguridad (aplican a todo el sitio)
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Impide que el sitio se cargue dentro de un iframe (anti-clickjacking)
+    X-Frame-Options = "DENY"
+
+    # Impide que el navegador "adivine" el MIME type de archivos servidos
+    X-Content-Type-Options = "nosniff"
+
+    # Al navegar a otro dominio, mandamos solo el origen (no la URL completa)
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Fuerza HTTPS por 2 años, incluye subdominios y permite preload en la lista de Chrome
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+    # Bloquea acceso a APIs sensibles del navegador que no usamos
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    # CSP relajada: permite Google Fonts (que ya usamos) e imágenes/data-URIs inline
+    # Si en algún momento agregamos analytics o scripts externos, hay que ampliarla acá.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+# ---------------------------------------------------------------
+# Cache agresivo para assets estáticos versionados (fuentes, imágenes que subamos)
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ---------------------------------------------------------------
+# HTML: cache corto para poder republicar rápido sin problemas de stale
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---------------------------------------------------------------
+# Optimizaciones de build
+# ---------------------------------------------------------------
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true

@@ -1,0 +1,2 @@
+# Fuerza el dominio apex como canónico (consolida SEO y evita duplicados)
+https://www.campuslatina.com/*    https://campuslatina.com/:splat    301!
