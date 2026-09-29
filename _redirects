@@ -5,3 +5,17 @@ https://www.campuslatina.com/*    https://campuslatina.com/:splat    301!
 # La página vieja redirige con 301: no se pierden enlaces externos ni posicionamiento.
 /diagnostico        https://diagnostico.campuslatina.com/    301!
 /diagnostico.html   https://diagnostico.campuslatina.com/    301!
+
+# URLs del sitio anterior (WordPress) que Google todavía rastrea: 301 a su equivalente actual.
+/contacto                     /#cta-final                                              301!
+/servicios                    /como-trabajamos                                         301!
+/soluciones                   /como-trabajamos                                         301!
+/campus-lab                   /como-trabajamos                                         301!
+/casos-y-evidencia            /notas/cultura-de-evidencias-universidades               301!
+/de-la-intuicion-a-la-evidencia-decisiones-que-hacen-crecer  /notas/cultura-de-evidencias-universidades  301!
+/la-universidad-que-no-aparece-en-el-mundo-digital-no-tiene-competitividad  /notas/universidad-visibilidad-ia-llm  301!
+/del-lead-al-estudiante-cada-momento-cada-contacto-cada-conexion-importan  /notas/por-que-el-aspirante-abandona-antes-de-inscribirse  301!
+/del-alta-administrativa-al-compromiso-real  /notas/por-que-el-aspirante-abandona-antes-de-inscribirse  301!
+/responder-rapido-ya-es-parte-de-la-empatia  /notas/bot-no-es-la-solucion-proceso-admisiones  301!
+/la-universidad-que-entiende-su-entorno-lidera-su-crecimiento  /notas/como-elige-el-estudiante-latinoamericano-2026  301!
+/crecimiento-real-mas-estudiantes-mejores-decisiones-mejor-gestion  /notas/el-diseno-del-proceso-es-la-estrategia  301!
