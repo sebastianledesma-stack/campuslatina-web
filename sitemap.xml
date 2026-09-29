@@ -1,81 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://campuslatina.com/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/quienes-somos.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/como-trabajamos.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/el-diseno-del-proceso-es-la-estrategia.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/como-elige-el-estudiante-latinoamericano-2026.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/universidad-visibilidad-ia-llm.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/cultura-de-evidencias-universidades.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/bot-no-es-la-solucion-proceso-admisiones.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://campuslatina.com/notas/construir-para-el-movimiento.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
+  <url><loc>https://campuslatina.com/</loc><lastmod>2026-09-29</lastmod><priority>1.0</priority></url>
+  <url><loc>https://campuslatina.com/quienes-somos</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/como-trabajamos</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://campuslatina.com/notas/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://campuslatina.com/notas/construir-para-el-movimiento</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/cultura-de-evidencias-universidades</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/bot-no-es-la-solucion-proceso-admisiones</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/universidad-visibilidad-ia-llm</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/como-elige-el-estudiante-latinoamericano-2026</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://campuslatina.com/notas/el-diseno-del-proceso-es-la-estrategia</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
 </urlset>
