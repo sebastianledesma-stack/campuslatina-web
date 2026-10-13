@@ -251,3 +251,73 @@ p{text-wrap:pretty}
 @media(max-width:760px){.pie-grid{grid-template-columns:1fr 1fr}.pie-grid>:first-child{grid-column:1/-1}}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- el camino del aspirante (único momento animado) ----------
+   Sin JS o con movimiento reducido se ve el esquema completo y quieto.
+   Con JS, cada paso del texto dibuja una capa: .p2 … .p5 en la figura. */
+.camino-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-6);align-items:start}
+.camino-paso{min-height:72vh;display:flex;flex-direction:column;justify-content:center;gap:var(--space-3);padding-block:var(--space-5)}
+.camino-paso:first-child{min-height:60vh;justify-content:flex-start;padding-top:0}
+.camino-paso:last-child{min-height:60vh}
+.camino-paso p{color:var(--ink-muted);max-width:44ch}
+.camino-paso .titulo-2 em{color:var(--accent)}
+.anim .camino-paso{opacity:.32;transition:opacity .4s ease}
+.anim .camino-paso.activo{opacity:1}
+.camino-ritmos{display:grid;gap:var(--space-4);margin-top:var(--space-2)}
+.camino-ritmos dt{font-weight:600;display:flex;align-items:center;gap:10px}
+.camino-ritmos dd{margin:4px 0 0 34px;color:var(--ink-muted);max-width:40ch}
+.camino-ritmos i{display:inline-block;width:24px;height:0;border-top:4px solid var(--accent)}
+.camino-ritmos i.r-luego{border-top:2px dashed var(--accent)}
+.camino-fig{position:sticky;top:110px;margin:0;height:calc(100vh - 150px);max-height:640px;display:flex;flex-direction:column;justify-content:center}
+.camino-svg{width:100%;height:auto;overflow:visible}
+.camino-indice{display:flex;gap:6px;list-style:none;padding:0;margin-top:var(--space-4);font-size:0}
+.camino-indice li{width:28px;height:3px;background:var(--rule)}
+.anim .camino-fig .camino-indice li:nth-child(1),.anim .p2 .camino-indice li:nth-child(2),.anim .p3 .camino-indice li:nth-child(3),.anim .p4 .camino-indice li:nth-child(4),.anim .p5 .camino-indice li:nth-child(5){background:var(--ink)}
+.camino:not(.anim) .camino-indice{display:none}
+
+.camino-svg text{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.camino-svg text.s{fill:var(--ink-muted);font-size:12px}
+.camino-svg text.fuerte{font-weight:700;font-size:14px}
+.camino-svg text.acento{fill:var(--accent);font-weight:700}
+.camino-svg text.d{font-family:var(--serif);font-style:italic;font-size:14px;fill:var(--ink-muted)}
+.camino-svg .nodo circle{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.camino-svg .nodo circle.fin{fill:var(--accent);stroke:var(--accent)}
+.camino-svg path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.camino-svg .l-diseno{stroke:var(--ink);stroke-width:2.5}
+.camino-svg .l-real path{stroke:var(--ink);stroke-width:1.4;opacity:.55}
+.camino-svg .decision{fill:var(--surface);stroke:var(--accent);stroke-width:3}
+.camino-svg .l-ahora{stroke:var(--accent);stroke-width:5}
+.camino-svg .l-luego{stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 7}
+.camino-svg .l-vuelta{stroke:var(--accent);stroke-width:1.6;stroke-dasharray:2 6;opacity:.8}
+.camino-svg .l-desvio path{stroke:var(--ink-muted);stroke-width:1.2;opacity:.6}
+.camino-svg .salida path{stroke:var(--ink-muted);stroke-width:2}
+
+/* estado animado */
+.anim .camino-svg .e{transition:opacity .5s ease}
+.anim .camino-svg .trazo{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)}
+.anim .camino-fig:not(.p2) .e2,.anim .camino-fig:not(.p3) .e3,.anim .camino-fig:not(.p4) .e4,.anim .camino-fig:not(.p5) .e5{opacity:0}
+.anim .camino-fig:not(.p2) .e2 .trazo,.anim .camino-fig:not(.p4) .e4 .trazo,.anim .camino-fig:not(.p5) .e5 .trazo{stroke-dashoffset:1}
+.anim .camino-fig.p2 .e1{opacity:.22}
+.anim .camino-fig.p4 .e2{opacity:.45}
+.anim .camino-fig.p5 .e4{opacity:.9}
+
+@media(max-width:860px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .camino-fig{order:-1;top:72px;z-index:2;height:auto;max-height:none;background:var(--surface-alt);padding-block:var(--space-3);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+  .camino-paso,.camino-paso:first-child,.camino-paso:last-child{min-height:62vh;justify-content:flex-start;padding-top:var(--space-5)}
+  .camino-fig{padding-block:var(--space-2)}
+  .camino-svg{max-height:38vh;width:auto;max-width:100%;margin-inline:auto}
+  .camino-indice{display:none}
+  .camino-svg text{font-size:23px}
+  .camino-svg text.s,.camino-svg text.d,.camino-svg text.mo{display:none}
+  .camino-svg text.fuerte{font-size:23px}
+  .camino-paso,.camino-paso:first-child,.camino-paso:last-child{min-height:70vh;justify-content:flex-end;padding-bottom:12vh}
+}
+
+/* el ala de la portada entra una vez, desde su raíz */
+@media(prefers-reduced-motion:no-preference){
+  .hero .ala path{transform-origin:9% 93%;animation:ala-entra .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero .ala path:nth-child(2){animation-delay:.08s}
+  .hero .ala path:nth-child(3){animation-delay:.16s}
+  @keyframes ala-entra{from{transform:rotate(-14deg) scale(.86);opacity:.2}to{transform:none;opacity:1}}
+}
