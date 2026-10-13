@@ -60,131 +60,266 @@
   </div>
 </section>
 
-<section class="sec alt camino" aria-labelledby="camino-t">
-  <div class="wrap camino-grid">
-    <div class="camino-pasos">
-      <div class="camino-paso" data-paso="1">
-        <span class="etiqueta">El camino del aspirante</span>
-        <h2 class="titulo-1" id="camino-t">El camino que se diseña.</h2>
-        <p>En la mayoría de las universidades, el proceso de admisión se piensa como una línea recta: formulario, llamada, charla e inscripción. Todos los aspirantes, el mismo recorrido y el mismo ritmo.</p>
-      </div>
-      <div class="camino-paso" data-paso="2">
-        <h3 class="titulo-2">El camino que hace el aspirante.</h3>
-        <p>Llega desde Google, un anuncio, la respuesta de un asistente de IA, las redes o la recomendación de alguien. Entra por la web, por una landing, por un formulario o escribe directo por WhatsApp. Cada combinación es un recorrido distinto.</p>
-      </div>
-      <div class="camino-paso" data-paso="3">
-        <h3 class="titulo-2">La pregunta que cambia todo: <em>¿cuándo quiere empezar?</em></h3>
-        <p>Hay quien averigua para más adelante y hay quien quiere inscribirse en este ciclo. Tratarlos igual hace perder a los dos: al primero se lo presiona y al segundo se lo hace esperar.</p>
-      </div>
-      <div class="camino-paso" data-paso="4">
-        <h3 class="titulo-2">Dos caminos, dos ritmos.</h3>
-        <dl class="camino-ritmos">
-          <div><dt><i class="r-ahora" aria-hidden="true"></i>Quiere empezar ahora</dt><dd>Respuesta en minutos, un asesor dedicado y acompañamiento cercano hasta el primer día de clase.</dd></div>
-          <div><dt><i class="r-luego" aria-hidden="true"></i>Decide más adelante</dt><dd>Contenido útil y contacto sin presión, hasta que esté listo. Cuando cambia su intención, pasa al camino rápido.</dd></div>
-        </dl>
-      </div>
-      <div class="camino-paso" data-paso="5">
-        <h3 class="titulo-2">Y decenas de desvíos.</h3>
-        <p>Compara con otras opciones, consulta con su familia, pregunta el precio antes que nada, desaparece y vuelve semanas después. Diseñamos el proceso para reconocer en qué camino está cada aspirante y acompañarlo desde ahí.</p>
-        <p class="acciones" style="margin-top:var(--space-5)"><a href="https://diagnostico.campuslatina.com/" class="btn">Ver dónde se pierden sus aspirantes →</a></p>
-      </div>
+<section class="sim" aria-labelledby="sim-t">
+<style>
+.sim{background:var(--azul-noche);color:var(--blanco);padding-block:var(--space-6) var(--space-6);--ink-muted:#B7BBD6;--rule:#2A2F6E;--accent:var(--ultramar-claro);--on-accent:var(--azul-noche);overflow:hidden}
+.sim-cab{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-6);align-items:end}
+.sim-cab .bajada{color:var(--ink-muted);max-width:46ch}
+.sim-barra{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3) var(--space-4);margin-top:var(--space-5)}
+.sim-ctrl{display:inline-flex;border:1px solid var(--rule)}
+.sim-ctrl button{font:600 15px/20px var(--sans);color:var(--ink-muted);background:none;border:0;padding:12px 18px;cursor:pointer;transition:background-color .2s,color .2s}
+.sim-ctrl button:hover{color:var(--blanco)}
+.sim-ctrl button[aria-pressed="true"]{background:var(--blanco);color:var(--azul-noche)}
+.sim-ctrl button[data-modo="intencion"][aria-pressed="true"]{background:var(--ultramar-claro)}
+.sim-auto{font-size:13px;color:var(--ink-muted)}
+.sim-escena{position:relative;max-width:1360px;margin:var(--space-3) auto 0;padding-inline:clamp(8px,2vw,32px)}
+.sim-escena canvas{display:block;width:100%;height:clamp(420px,calc(100vh - 340px),640px)}
+.sim-vivo{position:absolute;right:clamp(16px,4vw,64px);bottom:8px;display:grid;justify-items:end;gap:2px;text-align:right;pointer-events:none}
+.sim-vivo b{font-size:clamp(64px,8vw,128px);line-height:.85;letter-spacing:-.06em;font-variant-numeric:tabular-nums;color:var(--blanco);transition:color .3s}
+.sim-vivo.intencion b{color:var(--ultramar-claro)}
+.sim-vivo span{font-size:15px;color:var(--ink-muted)}
+.sim-vivo .perdidos{color:#FF8C7A;font-weight:600}
+.sim-fuentes{display:none;font-size:13px;color:var(--ink-muted);margin-top:var(--space-3)}
+.sim-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);border-top:1px solid var(--rule);padding-top:var(--space-5);margin-top:var(--space-4)}
+.sim-res>div{display:grid;gap:6px;align-content:start;opacity:.55;transition:opacity .3s}
+.sim-res>div.activo{opacity:1}
+.sim-res .rot{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.sim-res b{font-size:clamp(52px,6.4vw,96px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.sim-res .intencion b{color:var(--ultramar-claro)}
+.sim-res span{color:var(--ink-muted);font-size:15px;max-width:30ch}
+.sim-pie{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-4);margin-top:var(--space-6)}
+.sim-pie .chico{max-width:52ch}
+@media(max-width:760px){
+  .sim-cab{grid-template-columns:1fr;gap:var(--space-4)}
+  .sim-escena canvas{height:620px}
+  .sim-vivo{right:auto;left:20px;justify-items:start;text-align:left;bottom:4px}
+  .sim-vivo b{font-size:64px}
+  .sim-fuentes{display:block}
+  .sim-res{grid-template-columns:1fr 1fr;gap:var(--space-4)}
+}
+</style>
+  <div class="wrap sim-cab">
+    <div>
+      <span class="etiqueta">El camino del aspirante</span>
+      <h2 class="titulo-1" id="sim-t">Cien aspirantes, <em>cien caminos</em>.</h2>
     </div>
-
-    <figure class="camino-fig" aria-hidden="true">
-      <svg viewBox="0 0 640 540" class="camino-svg">
-        <!-- 1 · el camino que se diseña -->
-        <g class="e e1">
-          <path class="trazo l-diseno" pathLength="1" d="M40 48H600"/>
-          <g class="nodo"><circle cx="40" cy="48" r="5"/><circle cx="180" cy="48" r="5"/><circle cx="320" cy="48" r="5"/><circle cx="460" cy="48" r="5"/><circle cx="600" cy="48" r="5"/></g>
-          <text class="n" x="40" y="28">Consulta</text>
-          <text class="n mo" x="180" y="28" text-anchor="middle">Formulario</text>
-          <text class="n mo" x="320" y="28" text-anchor="middle">Llamada</text>
-          <text class="n mo" x="460" y="28" text-anchor="middle">Charla</text>
-          <text class="n" x="600" y="28" text-anchor="end">Inscripción</text>
-        </g>
-
-        <!-- 2 · el camino real: fuentes, puertas de entrada y recorridos -->
-        <g class="e e2">
-          <g class="l-real">
-            <path class="trazo" pathLength="1" d="M150 110C220 110 220 130 290 130"/>
-            <path class="trazo" pathLength="1" d="M150 155C220 155 220 190 290 190"/>
-            <path class="trazo" pathLength="1" d="M150 155C230 175 220 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M150 200C220 200 220 130 290 130"/>
-            <path class="trazo" pathLength="1" d="M150 245C220 245 220 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M150 245C220 245 220 190 290 190"/>
-            <path class="trazo" pathLength="1" d="M150 290C220 290 230 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M290 130C330 130 330 150 370 150"/>
-            <path class="trazo" pathLength="1" d="M290 190C330 190 330 150 370 150"/>
-            <path class="trazo" pathLength="1" d="M370 150C420 150 420 250 450 250"/>
-            <path class="trazo" pathLength="1" d="M290 250H450"/>
-          </g>
-          <g class="nodo"><circle cx="150" cy="110" r="4.5"/><circle cx="150" cy="155" r="4.5"/><circle cx="150" cy="200" r="4.5"/><circle cx="150" cy="245" r="4.5"/><circle cx="150" cy="290" r="4.5"/>
-            <circle cx="290" cy="130" r="5"/><circle cx="290" cy="190" r="5"/><circle cx="290" cy="250" r="5"/><circle cx="370" cy="150" r="5"/></g>
-          <text class="s" x="138" y="114" text-anchor="end">Google</text>
-          <text class="s" x="138" y="159" text-anchor="end">Anuncios</text>
-          <text class="s" x="138" y="204" text-anchor="end">Asistentes de IA</text>
-          <text class="s" x="138" y="249" text-anchor="end">Redes</text>
-          <text class="s" x="138" y="294" text-anchor="end">Recomendación</text>
-          <text class="n" x="290" y="116" text-anchor="middle">Web</text>
-          <text class="n" x="290" y="176" text-anchor="middle">Landing</text>
-          <text class="n" x="290" y="236" text-anchor="middle">WhatsApp</text>
-          <text class="n" x="370" y="136" text-anchor="middle">Formulario</text>
-        </g>
-
-        <!-- 3 · la bifurcación -->
-        <g class="e e3">
-          <circle class="decision" cx="450" cy="250" r="10"/>
-          <text class="n fuerte" x="438" y="284" text-anchor="end">¿Cuándo quiere empezar?</text>
-        </g>
-
-        <!-- 4 · dos ritmos -->
-        <g class="e e4">
-          <path class="trazo l-ahora" pathLength="1" d="M460 250C520 250 530 170 600 170"/>
-          <path class="l-luego" d="M450 260C450 330 400 380 430 430C460 480 560 480 580 430C600 380 560 340 520 360"/>
-          <path class="l-vuelta" d="M580 430C625 380 630 250 604 182"/>
-          <g class="nodo"><circle class="fin" cx="600" cy="170" r="7"/><circle cx="430" cy="430" r="4"/><circle cx="580" cy="430" r="4"/><circle cx="520" cy="360" r="4"/></g>
-          <text class="n acento" x="482" y="214">Ahora</text>
-          <text class="n mo" x="600" y="150" text-anchor="end">Inscripción y primer día</text>
-          <text class="n acento" x="462" y="318">Más adelante</text>
-          <text class="s" x="418" y="434" text-anchor="end">contenido útil</text>
-          <text class="s" x="590" y="452">recordatorios</text>
-          <text class="s" x="508" y="364" text-anchor="end">eventos</text>
-        </g>
-
-        <!-- 5 · decenas de desvíos -->
-        <g class="e e5">
-          <g class="l-desvio">
-            <path class="trazo" pathLength="1" d="M290 130C330 104 360 106 372 84"/>
-            <path class="trazo" pathLength="1" d="M290 190C250 240 200 330 250 390C300 450 350 380 320 350"/>
-            <path class="trazo" pathLength="1" d="M440 262C410 340 320 380 270 480"/>
-            <path class="trazo" pathLength="1" d="M150 110C190 70 250 80 262 100"/>
-            <path class="trazo" pathLength="1" d="M606 162C628 140 638 118 636 96"/>
-          </g>
-          <g class="salida"><path d="M367 74l10 10M377 74l-10 10"/><path d="M315 345l10 10M325 345l-10 10"/><path d="M265 475l10 10M275 475l-10 10"/><path d="M631 82l10 10M641 82l-10 10"/></g>
-          <text class="d" x="196" y="64">compara opciones</text>
-          <text class="d" x="236" y="420" text-anchor="end">consulta a su familia</text>
-          <text class="d" x="282" y="512">vuelve semanas después</text>
-          <text class="d" x="386" y="86">pregunta el precio</text>
-          <text class="d" x="636" y="122" text-anchor="end">no llega al primer día</text>
-        </g>
-      </svg>
-      <ol class="camino-indice" aria-hidden="true"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol>
-    </figure>
+    <p class="bajada">Llegan por canales distintos y con apuros distintos. Un proceso lineal los trata a todos igual. Un proceso diseñado pregunta primero cuándo quiere empezar cada uno.</p>
   </div>
-</section>
+  <div class="wrap sim-barra">
+    <div class="sim-ctrl" role="group" aria-label="Tipo de proceso">
+      <button type="button" data-modo="lineal" aria-pressed="true">Proceso lineal</button>
+      <button type="button" data-modo="intencion" aria-pressed="false">Proceso por intención</button>
+    </div>
+    <span class="sim-auto">Se alterna solo. Elija uno para fijarlo.</span>
+  </div>
+  <div class="sim-escena">
+    <p class="sim-fuentes wrap">Llegan desde Google, anuncios, asistentes de IA, redes y recomendaciones.</p>
+    <div class="sim-vivo" aria-hidden="true"><b data-v="n">0</b><span>llegan al primer día</span><span class="perdidos"><span data-v="p">0</span> se perdieron en el camino</span></div>
+    <canvas role="img" aria-label="Simulación: cien aspirantes recorren el proceso de admisión. En el proceso lineal muchos se pierden en cada paso. En el proceso por intención, quien quiere empezar ahora recibe respuesta en minutos y un asesor dedicado, y quien decide más adelante recibe contenido sin presión."></canvas>
+  </div>
+  <div class="wrap">
+    <div class="sim-res" aria-live="polite">
+      <div class="lineal activo"><span class="rot">Proceso lineal</span><b data-n="lineal">–</b><span>de cada 100 llegan al primer día de clase</span></div>
+      <div class="intencion"><span class="rot">Proceso por intención</span><b data-n="intencion">–</b><span>llegan al primer día, y <strong data-n="seguimiento">–</strong> siguen en contacto para más adelante</span></div>
+    </div>
+    <div class="sim-pie">
+      <p class="chico">Simulación ilustrativa. Muestra cómo se comporta cada tipo de proceso, no los resultados de una universidad en particular.</p>
+      <a href="https://diagnostico.campuslatina.com/" class="btn">Ver dónde se pierden sus aspirantes →</a>
+    </div>
+  </div>
 <script>
 (function(){
-  var s=document.querySelector('.camino'); if(!s||!('IntersectionObserver' in window)) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var f=s.querySelector('.camino-fig'), pasos=s.querySelectorAll('.camino-paso');
-  s.classList.add('anim');
-  function ir(n){ for(var i=2;i<=5;i++) f.classList.toggle('p'+i, n>=i); f.setAttribute('data-paso',n);
-    pasos.forEach(function(p){ p.classList.toggle('activo', +p.dataset.paso===n); }); }
-  ir(1);
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) ir(+e.target.dataset.paso); }); },{rootMargin:window.matchMedia('(max-width: 860px)').matches?'-62% 0px -28% 0px':'-45% 0px -45% 0px'});
-  pasos.forEach(function(p){ io.observe(p); });
+  var sec=document.querySelector('.sim'); if(!sec) return;
+  var cv=sec.querySelector('canvas'), ctx=cv.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var COL={linea:'rgba(255,255,255,.13)',lineaOn:'rgba(255,255,255,.34)',rapido:'rgba(138,147,255,.75)',texto:'rgba(255,255,255,.74)',fuerte:'#FFFFFF',acento:'#8A93FF',fondo:'#0E1240',cae:'255,140,122'};
+
+  // Nodos en coordenadas normalizadas del layout horizontal (x: flujo, y: alto)
+  var N={
+    g:{x:0,y:.06,l:'Google'},a:{x:0,y:.27,l:'Anuncios'},ia:{x:0,y:.48,l:'Asistentes de IA'},r:{x:0,y:.69,l:'Redes'},rec:{x:0,y:.90,l:'Recomendación'},
+    web:{x:.17,y:.22,l:'Web'},lan:{x:.17,y:.48,l:'Landing'},wa:{x:.17,y:.74,l:'WhatsApp'},
+    form:{x:.36,y:.48,l:'Formulario'},llam:{x:.52,y:.48,l:'Llamada'},charla:{x:.68,y:.48,l:'Charla'},
+    dec:{x:.35,y:.48,l:'¿Cuándo quiere empezar?'},resp:{x:.53,y:.12,l:'Respuesta en minutos'},ases:{x:.70,y:.12,l:'Asesor dedicado'},
+    loop:{x:.58,y:.80,l:'Contenido sin presión'},
+    insc:{x:.85,y:.48,l:'Inscripción'},dia:{x:1,y:.48,l:'Primer día'}
+  };
+  var FUENTES=['g','a','ia','r','rec'], ENTRADA={g:['web'],a:['lan','wa'],ia:['web'],r:['wa','lan'],rec:['wa']};
+  var LIN=['form','llam','charla','insc','dia'], CAE_LIN={form:.5,llam:.4,charla:.3,insc:.2,dia:.12};
+  var RAP=['resp','ases','insc','dia'], CAE_RAP={resp:.08,ases:.1,insc:.1,dia:.08};
+  var SAL=['insc','dia'], CAE_SAL={insc:.06,dia:.05};
+
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  function caida(lista,prob,R){for(var i=0;i<lista.length;i++){if(R()<prob[lista[i]])return lista[i];}return null;}
+
+  // El destino de cada aspirante se decide al nacer: la animación solo lo reproduce y los totales son siempre los mismos.
+  function destinos(modo){
+    var R=rng(modo==='lineal'?11:29), out=[];
+    for(var i=0;i<100;i++){
+      var f=FUENTES[Math.floor(R()*5)], e=ENTRADA[f][Math.floor(R()*ENTRADA[f].length)], d={f:f,e:e,t:i*0.075};
+      if(modo==='lineal'){d.ruta=[f,e].concat(LIN);d.cae=caida(LIN,CAE_LIN,R);}
+      else if(R()<.28){d.ahora=true;d.ruta=[f,e,'dec'].concat(RAP);d.cae=caida(RAP,CAE_RAP,R);}
+      else{
+        d.ruta=[f,e,'dec'];d.vueltas=0;d.fin='seguimiento';
+        for(var v=1;v<=3;v++){var x=R();if(x<.10){d.vueltas=v;d.fin='sale';d.cae=caida(SAL,CAE_SAL,R);break;}if(x<.25){d.vueltas=v;d.fin='cae';break;}}
+        if(d.fin==='seguimiento')d.vueltas=3;
+      }
+      out.push(d);
+    }
+    return out;
+  }
+  function totales(modo){var ds=destinos(modo),ll=0,sg=0;ds.forEach(function(d){if(d.fin==='seguimiento')sg++;else if(d.fin!=='cae'&&!d.cae)ll++;});return{llegan:ll,seguimiento:sg};}
+  var TOT={lineal:totales('lineal'),intencion:totales('intencion')};
+
+  // ---------- layout ----------
+  var W=0,H=0,DPR=1,vert=false,P={},LOOP={};
+  function medir(){
+    var r=cv.getBoundingClientRect();DPR=Math.min(window.devicePixelRatio||1,2);
+    W=r.width;H=r.height;cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);
+    vert=W<640;
+    var pl=vert?28:150, pr=vert?28:60, pt=vert?40:56, pb=vert?40:56;
+    for(var k in N){var n=N[k];
+      P[k]=vert?{x:pl+n.y*(W-pl-pr),y:pt+n.x*(H-pt-pb)}:{x:pl+n.x*(W-pl-pr),y:pt+n.y*(H-pt-pb)};}
+    var c=P.loop;LOOP={x:c.x,y:c.y,rx:vert?(W*.16):(W*.06),ry:vert?(H*.07):(H*.11)};
+    if(vert){LOOP.x=Math.min(c.x,W-LOOP.rx-12);}
+    LOOP.top=vert?{x:LOOP.x-LOOP.rx,y:LOOP.y}:{x:LOOP.x,y:LOOP.y-LOOP.ry};
+    LOOP.sal=vert?{x:LOOP.x,y:LOOP.y+LOOP.ry}:{x:LOOP.x+LOOP.rx,y:LOOP.y};
+    LOOP.a0=vert?Math.PI:-Math.PI/2; LOOP.a1=vert?Math.PI/2:0;
+  }
+  function bez(A,B){var c1,c2;if(vert){var dy=(B.y-A.y)*.5;c1={x:A.x,y:A.y+dy};c2={x:B.x,y:B.y-dy};}else{var dx=(B.x-A.x)*.5;c1={x:A.x+dx,y:A.y};c2={x:B.x-dx,y:B.y};}return[A,c1,c2,B];}
+  function enBez(b,t){var u=1-t;return{x:u*u*u*b[0].x+3*u*u*t*b[1].x+3*u*t*t*b[2].x+t*t*t*b[3].x,y:u*u*u*b[0].y+3*u*u*t*b[1].y+3*u*t*t*b[2].y+t*t*t*b[3].y};}
+  function largo(b){var l=0,p=b[0];for(var i=1;i<=12;i++){var q=enBez(b,i/12);l+=Math.hypot(q.x-p.x,q.y-p.y);p=q;}return l;}
+  function trazar(b){ctx.beginPath();ctx.moveTo(b[0].x,b[0].y);ctx.bezierCurveTo(b[1].x,b[1].y,b[2].x,b[2].y,b[3].x,b[3].y);ctx.stroke();}
+  function pt(k){if(k==='loopTop')return LOOP.top;if(k==='loopSal')return LOOP.sal;return P[k];}
+  function enLoop(a){return{x:LOOP.x+LOOP.rx*Math.cos(a),y:LOOP.y+LOOP.ry*Math.sin(a)};}
+
+  // ---------- escena estática (líneas, nodos y etiquetas) ----------
+  function aristas(modo){
+    var e=[];FUENTES.forEach(function(f){ENTRADA[f].forEach(function(x){e.push([f,x,'base']);});});
+    if(modo==='lineal'){['web','lan','wa'].forEach(function(x){e.push([x,'form','on']);});for(var i=0;i<LIN.length-1;i++)e.push([LIN[i],LIN[i+1],'on']);}
+    else{['web','lan','wa'].forEach(function(x){e.push([x,'dec','on']);});e.push(['dec','resp','rap'],['resp','ases','rap'],['ases','insc','rap'],['insc','dia','rap'],['dec','loopTop','on'],['loopSal','insc','on']);}
+    return e;
+  }
+  function etiqueta(k,txt,estilo){
+    var p=pt(k);ctx.font=(estilo==='fuerte'?'700 14px ':'500 13px ')+'"Schibsted Grotesk",Arial,sans-serif';
+    ctx.fillStyle=estilo==='fuerte'?COL.fuerte:estilo==='acento'?COL.acento:COL.texto;
+    if(vert){
+      if(FUENTES.indexOf(k)>=0)return;
+      ctx.textAlign='left';ctx.textBaseline='middle';
+      var dx=12;if(p.x>W*.6){ctx.textAlign='right';dx=-12;}
+      ctx.fillText(txt,p.x+dx,p.y);return;
+    }
+    if(FUENTES.indexOf(k)>=0){ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText(txt,p.x-12,p.y);return;}
+    ctx.textAlign=k==='dia'?'right':'center';ctx.textBaseline='alphabetic';
+    if(k==='dec'){ctx.textBaseline='top';ctx.fillText(txt,p.x,p.y+16);return;}
+    ctx.fillText(txt,k==='dia'?p.x+4:p.x,p.y-14);
+  }
+  function escena(modo){
+    ctx.clearRect(0,0,W,H);ctx.lineCap='round';
+    aristas(modo).forEach(function(a){var b=bez(pt(a[0]),pt(a[1]));
+      ctx.strokeStyle=a[2]==='rap'?COL.rapido:a[2]==='on'?COL.lineaOn:COL.linea;ctx.lineWidth=a[2]==='rap'?5:a[2]==='on'?2:1.3;trazar(b);});
+    if(modo==='intencion'){ctx.save();ctx.setLineDash([4,7]);ctx.strokeStyle=COL.lineaOn;ctx.lineWidth=1.6;ctx.beginPath();ctx.ellipse(LOOP.x,LOOP.y,LOOP.rx,LOOP.ry,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
+    var nodos=FUENTES.concat(['web','lan','wa']).concat(modo==='lineal'?LIN:['dec','resp','ases','insc','dia']);
+    nodos.forEach(function(k){var p=P[k],dec=k==='dec',fin=k==='dia';
+      ctx.beginPath();ctx.arc(p.x,p.y,dec?9:fin?6:4,0,Math.PI*2);ctx.fillStyle=fin?COL.acento:COL.fondo;ctx.fill();
+      ctx.lineWidth=dec?3:2;ctx.strokeStyle=dec?COL.acento:'rgba(255,255,255,.8)';ctx.stroke();});
+    nodos.forEach(function(k){etiqueta(k,N[k].l,k==='dec'||k==='dia'?'fuerte':(modo==='intencion'&&(k==='resp'||k==='ases'))?'acento':'');});
+    if(modo==='intencion'){var p=vert?{x:LOOP.x,y:LOOP.y}:{x:LOOP.x,y:LOOP.y+LOOP.ry+18};ctx.font='500 13px "Schibsted Grotesk",Arial,sans-serif';ctx.fillStyle=COL.texto;ctx.textAlign='center';ctx.textBaseline=vert?'middle':'top';ctx.fillText(vert?'Sin presión':N.loop.l,p.x,p.y);}
+  }
+
+  // ---------- partículas ----------
+  var modo='lineal',fijo=false,ps=[],reloj=0,fase='corre',espera=0,cuenta={lineal:0,intencion:0,seguimiento:0,perdidos:0},corriendo=false,ultimo=0;
+  var elN={lineal:sec.querySelector('[data-n="lineal"]'),intencion:sec.querySelector('[data-n="intencion"]'),seguimiento:sec.querySelector('[data-n="seguimiento"]')};
+  var bloques={lineal:sec.querySelector('.sim-res .lineal'),intencion:sec.querySelector('.sim-res .intencion')};
+  var botones=sec.querySelectorAll('.sim-ctrl button');
+  var vivo=sec.querySelector('.sim-vivo'),vN=vivo.querySelector('[data-v="n"]'),vP=vivo.querySelector('[data-v="p"]');
+  function pintarTotales(final){
+    vN.textContent=final?TOT[modo].llegan:cuenta[modo];vP.textContent=final?(100-TOT[modo].llegan-TOT[modo].seguimiento):cuenta.perdidos;vivo.classList.toggle('intencion',modo==='intencion');
+    elN.lineal.textContent=(modo==='lineal'&&!final)?cuenta.lineal:TOT.lineal.llegan;
+    elN.intencion.textContent=(modo==='intencion'&&!final)?cuenta.intencion:TOT.intencion.llegan;
+    elN.seguimiento.textContent=(modo==='intencion'&&!final)?cuenta.seguimiento:TOT.intencion.seguimiento;
+  }
+  function iniciar(m){
+    modo=m;reloj=0;fase='corre';cuenta={lineal:0,intencion:0,seguimiento:0,perdidos:0};
+    ps=destinos(m).map(function(d){return{d:d,seg:0,t:0,estado:'espera',rastro:[],vueltas:0,ang:0};});
+    botones.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.modo===m));});
+    bloques.lineal.classList.toggle('activo',m==='lineal');bloques.intencion.classList.toggle('activo',m==='intencion');
+    pintarTotales(false);
+  }
+  function rutaDe(p){var d=p.d,r=d.ruta.slice();if(!d.ahora&&modo==='intencion'){if(p.estado==='sale')return['loopSal'].concat(SAL);return r.concat(['loopTop']);}return r;}
+  function paso(dt){
+    reloj+=dt;var vel=(vert?H:W)*0.19, vivos=0;
+    ps.forEach(function(p){
+      var d=p.d;
+      if(p.estado==='espera'){if(reloj>=d.t){p.estado='va';}else return;}
+      if(p.estado==='fin'||p.estado==='quieto')return;
+      if(p.estado==='cae'){p.vida-=dt;p.vy=(p.vy||0)+90*dt;p.y+=p.vy*dt;if(p.vida<=0)p.estado='fin';vivos++;return;}
+      if(p.estado==='loop'){
+        p.ang+=dt*2.4;var lap=Math.floor((p.ang-LOOP.a0)/(Math.PI*2));
+        if(!(d.fin==='seguimiento'&&lap>=d.vueltas))vivos++;
+        var q=enLoop(p.ang);p.x=q.x;p.y=q.y;
+        if(lap>=d.vueltas){
+          if(d.fin==='cae'){p.estado='cae';p.vida=2.4;p.cx=p.x;p.cy=p.y;cuenta.perdidos++;}
+          else if(d.fin==='sale'&&((p.ang-LOOP.a1)%(Math.PI*2)+Math.PI*2)%(Math.PI*2)<0.25){p.estado='sale';p.seg=0;p.t=0;p.rapido=true;}
+          else if(d.fin==='seguimiento'&&!p.contado){p.contado=true;cuenta.seguimiento++;}
+        }
+      }else{
+        vivos++;
+        var ruta=rutaDe(p);
+        if(p.seg>=ruta.length-1){p.estado='fin';return;}
+        var b=bez(pt(ruta[p.seg]),pt(ruta[p.seg+1]));
+        var f=(p.rapido||d.ahora)?1.7:1;
+        p.t+=dt*vel*f/Math.max(largo(b),1);
+        if(p.t>=1){
+          p.t=0;p.seg++;var llega=ruta[p.seg];
+          if(d.cae===llega){p.estado='cae';p.vida=2.4;cuenta.perdidos++;var q2=pt(llega);p.x=q2.x;p.y=q2.y;p.cx=p.x;p.cy=p.y;return;}
+          if(llega==='dia'){p.estado='fin';cuenta[modo]++;var q3=pt('dia');p.x=q3.x;p.y=q3.y;return;}
+          if(llega==='loopTop'){p.estado='loop';p.ang=LOOP.a0;return;}
+          b=bez(pt(ruta[p.seg]),pt(ruta[Math.min(p.seg+1,ruta.length-1)]));
+        }
+        var q=enBez(b,p.t);p.x=q.x;p.y=q.y;
+      }
+      p.rastro.push(p.x,p.y);if(p.rastro.length>24)p.rastro.splice(0,2);
+    });
+    pintarTotales(false);
+    return vivos;
+  }
+  function dibujarParticulas(){
+    ps.forEach(function(p){
+      if(p.estado==='espera'||(p.estado==='fin'&&!p.cx))return;
+      var rapido=p.rapido||p.d.ahora, col=modo==='lineal'?'255,255,255':rapido?'138,147,255':'255,255,255';
+      if(p.estado==='cae'||(p.estado==='fin'&&p.cx)){
+        var a=Math.max(p.vida||0,0)/2.4;if(a<=0)return;
+        ctx.strokeStyle='rgba('+COL.cae+','+Math.min(1,a*1.4)+')';ctx.lineWidth=2;var s=5;
+        ctx.beginPath();ctx.moveTo(p.cx-s,p.cy-s);ctx.lineTo(p.cx+s,p.cy+s);ctx.moveTo(p.cx+s,p.cy-s);ctx.lineTo(p.cx-s,p.cy+s);ctx.stroke();
+        ctx.fillStyle='rgba('+COL.cae+','+a+')';ctx.beginPath();ctx.arc(p.x,p.y,3.6,0,Math.PI*2);ctx.fill();return;
+      }
+      var r=p.rastro;for(var i=2;i<r.length;i+=2){ctx.strokeStyle='rgba('+col+','+(i/r.length*.45)+')';ctx.lineWidth=rapido?3:2.4;ctx.beginPath();ctx.moveTo(r[i-2],r[i-1]);ctx.lineTo(r[i],r[i+1]);ctx.stroke();}
+      ctx.save();ctx.shadowColor='rgba('+col+',.9)';ctx.shadowBlur=rapido?14:8;ctx.fillStyle='rgba('+col+',1)';ctx.beginPath();ctx.arc(p.x,p.y,rapido?4.8:3.8,0,Math.PI*2);ctx.fill();ctx.restore();
+    });
+  }
+  function cuadro(ts){
+    if(!corriendo)return;
+    var dt=Math.min((ts-(ultimo||ts))/1000,0.05);ultimo=ts;
+    if(fase==='corre'){var vivos=paso(dt);if(reloj>8&&vivos===0){fase='pausa';espera=3.2;pintarTotales(true);}}
+    else{paso(dt);espera-=dt;if(espera<=0){iniciar(fijo?modo:(modo==='lineal'?'intencion':'lineal'));}}
+    escena(modo);dibujarParticulas();
+    requestAnimationFrame(cuadro);
+  }
+  botones.forEach(function(b){b.addEventListener('click',function(){fijo=true;sec.querySelector('.sim-auto').textContent='Fijado. Toque el otro botón para comparar.';iniciar(b.dataset.modo);if(reduce){escena(modo);pintarTotales(true);}});});
+
+  function arrancar(){
+    medir();iniciar('lineal');
+    if(reduce){escena('lineal');pintarTotales(true);sec.querySelector('.sim-auto').textContent='Elija un tipo de proceso para verlo.';return;}
+    escena('lineal');
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!corriendo){corriendo=true;ultimo=0;requestAnimationFrame(cuadro);}else if(!e.isIntersecting){corriendo=false;}});},{threshold:.2}).observe(cv);
+    }else{corriendo=true;requestAnimationFrame(cuadro);}
+  }
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){medir();escena(modo);},120);});
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(arrancar);
 })();
 </script>
+</section>
 
 
 <section class="sec" aria-labelledby="hallazgo-t">
