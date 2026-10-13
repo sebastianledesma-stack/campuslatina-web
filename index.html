@@ -60,131 +60,157 @@
   </div>
 </section>
 
-<section class="sec alt camino" aria-labelledby="camino-t">
-  <div class="wrap camino-grid">
-    <div class="camino-pasos">
-      <div class="camino-paso" data-paso="1">
-        <span class="etiqueta">El camino del aspirante</span>
-        <h2 class="titulo-1" id="camino-t">El camino que se diseña.</h2>
-        <p>En la mayoría de las universidades, el proceso de admisión se piensa como una línea recta: formulario, llamada, charla e inscripción. Todos los aspirantes, el mismo recorrido y el mismo ritmo.</p>
+<section class="tr" aria-labelledby="tr-t">
+<style>
+.tr{position:relative;height:280vh;background:var(--surface)}
+.tr-escena{position:sticky;top:69px;height:calc(100vh - 69px);min-height:560px;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
+.tr-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--space-5);align-items:start;padding-top:clamp(24px,5vh,56px)}
+.tr-textos{display:grid}
+.tr-texto{grid-area:1/1;display:grid;gap:var(--space-3);align-content:start;transition:opacity .5s ease,transform .5s ease}
+.tr-texto h2,.tr-texto h3{font-size:clamp(44px,6.6vw,96px);line-height:.95;letter-spacing:-.045em;font-weight:700}
+.tr-texto h2 em,.tr-texto h3 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.025em;color:var(--accent)}
+.tr-texto p{color:var(--ink-muted);max-width:52ch;font-size:clamp(16px,1.3vw,19px);line-height:1.5}
+.tr-texto .btn{justify-self:start;margin-top:var(--space-2)}
+.tr-js .tr-texto{opacity:0;transform:translateY(14px);pointer-events:none}
+.tr-js .tr-texto.activo{opacity:1;transform:none;pointer-events:auto}
+.tr-indice{list-style:none;padding:0;display:grid;gap:6px;font-size:14px;color:var(--ink-muted);min-width:190px}
+.tr-indice button{all:unset;cursor:pointer;display:flex;gap:10px;align-items:center;padding:4px 0}
+.tr-indice button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tr-indice b{font-variant-numeric:tabular-nums;font-weight:600;width:22px}
+.tr-indice i{display:block;height:2px;width:28px;background:var(--rule);transition:width .4s,background-color .4s}
+.tr-indice .activo{color:var(--ink)}
+.tr-indice .activo i{width:56px;background:var(--accent)}
+.tr-lienzo{position:relative;min-height:0;overflow:hidden}
+
+.tr-lienzo svg{position:absolute;inset:0;width:100%;height:100%}
+.tr-lienzo path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.tr-et{position:absolute;transform:translate(-50%,-50%);font-size:15px;font-weight:700;white-space:nowrap;opacity:0;transition:opacity .4s}
+.tr-et.d{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink-muted);font-size:16px}
+.tr-et.acento{color:var(--accent)}
+.tr-et.fin{transform:translate(-100%,-150%)}
+.tr-etapas{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--rule);padding-block:14px 22px;font-size:13px;color:var(--ink-muted)}
+.tr-etapas span{padding-right:8px}
+.tr-etapas span:first-child{padding-left:0}
+.tr:not(.tr-js){height:auto}
+.tr:not(.tr-js) .tr-escena{position:relative;top:0;height:auto}
+.tr:not(.tr-js) .tr-textos{gap:var(--space-5)}
+.tr:not(.tr-js) .tr-texto{grid-area:auto}
+.tr:not(.tr-js) .tr-lienzo{height:420px}
+@media(max-width:860px){
+  .tr{height:260vh}
+  .tr-escena{top:64px;height:calc(100svh - 64px)}
+  .tr-cab{grid-template-columns:1fr;padding-top:var(--space-4)}
+  .tr-indice{display:flex;gap:14px;min-width:0;order:-1}
+  .tr-indice span{display:none}
+  .tr-texto h2,.tr-texto h3{font-size:clamp(38px,11vw,56px)}
+  .tr-texto p{font-size:16px}
+  .tr-etapas{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:4px;font-size:11px}
+  .tr-etapas span:nth-child(n+5){display:none}
+  .tr-et{font-size:13px}.tr-et.d,.tr-et.m-no{display:none}
+}
+</style>
+  <div class="tr-escena">
+    <div class="wrap tr-cab">
+      <div class="tr-textos">
+        <div class="tr-texto" data-e="0">
+          <span class="etiqueta">El camino del aspirante</span>
+          <h2 id="tr-t">Así se <em>diseña</em>.</h2>
+          <p>Formulario, llamada, charla e inscripción. En la mayoría de las universidades, todos los aspirantes recorren el mismo camino al mismo ritmo.</p>
+        </div>
+        <div class="tr-texto" data-e="1">
+          <span class="etiqueta">El camino del aspirante</span>
+          <h3>Así lo <em>recorre</em>.</h3>
+          <p>Llega por Google, un anuncio, un asistente de IA, las redes o una recomendación. Escribe por WhatsApp, compara, consulta con su familia, desaparece y vuelve. Algunos no vuelven.</p>
+        </div>
+        <div class="tr-texto" data-e="2">
+          <span class="etiqueta">El camino del aspirante</span>
+          <h3>Así lo <em>rediseñamos</em>.</h3>
+          <p>Primero, una pregunta: ¿cuándo quiere empezar? Quien decide ahora recibe respuesta en minutos y un asesor dedicado. Quien decide más adelante recibe contenido útil, sin presión, hasta que esté listo.</p>
+          <a href="https://diagnostico.campuslatina.com/" class="btn">Ver dónde se pierden sus aspirantes →</a>
+        </div>
       </div>
-      <div class="camino-paso" data-paso="2">
-        <h3 class="titulo-2">El camino que hace el aspirante.</h3>
-        <p>Llega desde Google, un anuncio, la respuesta de un asistente de IA, las redes o la recomendación de alguien. Entra por la web, por una landing, por un formulario o escribe directo por WhatsApp. Cada combinación es un recorrido distinto.</p>
-      </div>
-      <div class="camino-paso" data-paso="3">
-        <h3 class="titulo-2">La pregunta que cambia todo: <em>¿cuándo quiere empezar?</em></h3>
-        <p>Hay quien averigua para más adelante y hay quien quiere inscribirse en este ciclo. Tratarlos igual hace perder a los dos: al primero se lo presiona y al segundo se lo hace esperar.</p>
-      </div>
-      <div class="camino-paso" data-paso="4">
-        <h3 class="titulo-2">Dos caminos, dos ritmos.</h3>
-        <dl class="camino-ritmos">
-          <div><dt><i class="r-ahora" aria-hidden="true"></i>Quiere empezar ahora</dt><dd>Respuesta en minutos, un asesor dedicado y acompañamiento cercano hasta el primer día de clase.</dd></div>
-          <div><dt><i class="r-luego" aria-hidden="true"></i>Decide más adelante</dt><dd>Contenido útil y contacto sin presión, hasta que esté listo. Cuando cambia su intención, pasa al camino rápido.</dd></div>
-        </dl>
-      </div>
-      <div class="camino-paso" data-paso="5">
-        <h3 class="titulo-2">Y decenas de desvíos.</h3>
-        <p>Compara con otras opciones, consulta con su familia, pregunta el precio antes que nada, desaparece y vuelve semanas después. Diseñamos el proceso para reconocer en qué camino está cada aspirante y acompañarlo desde ahí.</p>
-        <p class="acciones" style="margin-top:var(--space-5)"><a href="https://diagnostico.campuslatina.com/" class="btn">Ver dónde se pierden sus aspirantes →</a></p>
-      </div>
+      <ol class="tr-indice" aria-label="Estados del camino">
+        <li><button type="button" data-ir="0"><b>01</b><i></i><span>Se diseña</span></button></li>
+        <li><button type="button" data-ir="1"><b>02</b><i></i><span>Lo recorre</span></button></li>
+        <li><button type="button" data-ir="2"><b>03</b><i></i><span>Lo rediseñamos</span></button></li>
+      </ol>
     </div>
-
-    <figure class="camino-fig" aria-hidden="true">
-      <svg viewBox="0 0 640 540" class="camino-svg">
-        <!-- 1 · el camino que se diseña -->
-        <g class="e e1">
-          <path class="trazo l-diseno" pathLength="1" d="M40 48H600"/>
-          <g class="nodo"><circle cx="40" cy="48" r="5"/><circle cx="180" cy="48" r="5"/><circle cx="320" cy="48" r="5"/><circle cx="460" cy="48" r="5"/><circle cx="600" cy="48" r="5"/></g>
-          <text class="n" x="40" y="28">Consulta</text>
-          <text class="n mo" x="180" y="28" text-anchor="middle">Formulario</text>
-          <text class="n mo" x="320" y="28" text-anchor="middle">Llamada</text>
-          <text class="n mo" x="460" y="28" text-anchor="middle">Charla</text>
-          <text class="n" x="600" y="28" text-anchor="end">Inscripción</text>
-        </g>
-
-        <!-- 2 · el camino real: fuentes, puertas de entrada y recorridos -->
-        <g class="e e2">
-          <g class="l-real">
-            <path class="trazo" pathLength="1" d="M150 110C220 110 220 130 290 130"/>
-            <path class="trazo" pathLength="1" d="M150 155C220 155 220 190 290 190"/>
-            <path class="trazo" pathLength="1" d="M150 155C230 175 220 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M150 200C220 200 220 130 290 130"/>
-            <path class="trazo" pathLength="1" d="M150 245C220 245 220 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M150 245C220 245 220 190 290 190"/>
-            <path class="trazo" pathLength="1" d="M150 290C220 290 230 250 290 250"/>
-            <path class="trazo" pathLength="1" d="M290 130C330 130 330 150 370 150"/>
-            <path class="trazo" pathLength="1" d="M290 190C330 190 330 150 370 150"/>
-            <path class="trazo" pathLength="1" d="M370 150C420 150 420 250 450 250"/>
-            <path class="trazo" pathLength="1" d="M290 250H450"/>
-          </g>
-          <g class="nodo"><circle cx="150" cy="110" r="4.5"/><circle cx="150" cy="155" r="4.5"/><circle cx="150" cy="200" r="4.5"/><circle cx="150" cy="245" r="4.5"/><circle cx="150" cy="290" r="4.5"/>
-            <circle cx="290" cy="130" r="5"/><circle cx="290" cy="190" r="5"/><circle cx="290" cy="250" r="5"/><circle cx="370" cy="150" r="5"/></g>
-          <text class="s" x="138" y="114" text-anchor="end">Google</text>
-          <text class="s" x="138" y="159" text-anchor="end">Anuncios</text>
-          <text class="s" x="138" y="204" text-anchor="end">Asistentes de IA</text>
-          <text class="s" x="138" y="249" text-anchor="end">Redes</text>
-          <text class="s" x="138" y="294" text-anchor="end">Recomendación</text>
-          <text class="n" x="290" y="116" text-anchor="middle">Web</text>
-          <text class="n" x="290" y="176" text-anchor="middle">Landing</text>
-          <text class="n" x="290" y="236" text-anchor="middle">WhatsApp</text>
-          <text class="n" x="370" y="136" text-anchor="middle">Formulario</text>
-        </g>
-
-        <!-- 3 · la bifurcación -->
-        <g class="e e3">
-          <circle class="decision" cx="450" cy="250" r="10"/>
-          <text class="n fuerte" x="438" y="284" text-anchor="end">¿Cuándo quiere empezar?</text>
-        </g>
-
-        <!-- 4 · dos ritmos -->
-        <g class="e e4">
-          <path class="trazo l-ahora" pathLength="1" d="M460 250C520 250 530 170 600 170"/>
-          <path class="l-luego" d="M450 260C450 330 400 380 430 430C460 480 560 480 580 430C600 380 560 340 520 360"/>
-          <path class="l-vuelta" d="M580 430C625 380 630 250 604 182"/>
-          <g class="nodo"><circle class="fin" cx="600" cy="170" r="7"/><circle cx="430" cy="430" r="4"/><circle cx="580" cy="430" r="4"/><circle cx="520" cy="360" r="4"/></g>
-          <text class="n acento" x="482" y="214">Ahora</text>
-          <text class="n mo" x="600" y="150" text-anchor="end">Inscripción y primer día</text>
-          <text class="n acento" x="462" y="318">Más adelante</text>
-          <text class="s" x="418" y="434" text-anchor="end">contenido útil</text>
-          <text class="s" x="590" y="452">recordatorios</text>
-          <text class="s" x="508" y="364" text-anchor="end">eventos</text>
-        </g>
-
-        <!-- 5 · decenas de desvíos -->
-        <g class="e e5">
-          <g class="l-desvio">
-            <path class="trazo" pathLength="1" d="M290 130C330 104 360 106 372 84"/>
-            <path class="trazo" pathLength="1" d="M290 190C250 240 200 330 250 390C300 450 350 380 320 350"/>
-            <path class="trazo" pathLength="1" d="M440 262C410 340 320 380 270 480"/>
-            <path class="trazo" pathLength="1" d="M150 110C190 70 250 80 262 100"/>
-            <path class="trazo" pathLength="1" d="M606 162C628 140 638 118 636 96"/>
-          </g>
-          <g class="salida"><path d="M367 74l10 10M377 74l-10 10"/><path d="M315 345l10 10M325 345l-10 10"/><path d="M265 475l10 10M275 475l-10 10"/><path d="M631 82l10 10M641 82l-10 10"/></g>
-          <text class="d" x="196" y="64">compara opciones</text>
-          <text class="d" x="236" y="420" text-anchor="end">consulta a su familia</text>
-          <text class="d" x="282" y="512">vuelve semanas después</text>
-          <text class="d" x="386" y="86">pregunta el precio</text>
-          <text class="d" x="636" y="122" text-anchor="end">no llega al primer día</text>
-        </g>
-      </svg>
-      <ol class="camino-indice" aria-hidden="true"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol>
-    </figure>
+    <div class="tr-lienzo" aria-hidden="true">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="none"><defs><clipPath id="tr-clip"><rect class="tr-barrido" x="-40" y="-200" width="1300" height="1000"/></clipPath></defs><g class="tr-lineas" clip-path="url(#tr-clip)"></g></svg>
+      <span class="tr-et acento" data-k="2" style="left:37%;top:13%">Ahora</span>
+      <span class="tr-et acento" data-k="2" style="left:43%;top:94%">Más adelante</span>
+      <span class="tr-et m-no" data-k="2" style="left:17%;top:40%">¿Cuándo quiere empezar?</span>
+      <span class="tr-et fin m-no" data-k="2" style="left:98%;top:50%">Primer día de clase</span>
+      <span class="tr-et d" data-k="1" style="left:30%;top:6%">compara opciones</span>
+      <span class="tr-et d" data-k="1" style="left:52%;top:96%">consulta a su familia</span>
+      <span class="tr-et d" data-k="1" style="left:70%;top:5%">pregunta el precio</span>
+      <span class="tr-et d" data-k="1" style="left:86%;top:93%">no vuelve</span>
+    </div>
+    <div class="wrap tr-etapas" aria-hidden="true"><span>Descubrimiento</span><span>Exploración</span><span>Activación</span><span>Acompañamiento</span><span>Decisión</span><span>Inscripción</span><span>Primer día</span></div>
   </div>
-</section>
 <script>
 (function(){
-  var s=document.querySelector('.camino'); if(!s||!('IntersectionObserver' in window)) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var f=s.querySelector('.camino-fig'), pasos=s.querySelectorAll('.camino-paso');
-  s.classList.add('anim');
-  function ir(n){ for(var i=2;i<=5;i++) f.classList.toggle('p'+i, n>=i); f.setAttribute('data-paso',n);
-    pasos.forEach(function(p){ p.classList.toggle('activo', +p.dataset.paso===n); }); }
-  ir(1);
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) ir(+e.target.dataset.paso); }); },{rootMargin:window.matchMedia('(max-width: 860px)').matches?'-62% 0px -28% 0px':'-45% 0px -45% 0px'});
-  pasos.forEach(function(p){ io.observe(p); });
+  var sec=document.querySelector('.tr'); if(!sec) return;
+  var g=sec.querySelector('.tr-lineas'), NS='http://www.w3.org/2000/svg';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var L=14, X=[-30,140,300,460,620,760,880,1000,1230];
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  var R=rng(7), K=[[],[],[]], AHORA=5, SALE=[2,6,9,12], CAE2=11;
+  for(var i=0;i<L;i++){
+    var off=(i-(L-1)/2);
+    K[0].push(X.map(function(){return 300+off*2.2;}));
+    var sale=SALE.indexOf(i), y=300+off*14, k1=[];
+    for(var j=0;j<X.length;j++){
+      if(j===0){k1.push(300+off*2.2);continue;}
+      if(sale>=0&&j>=3+sale){k1.push(i%2?680:-80);continue;}
+      y+=(R()-.5)*260; y=Math.max(40,Math.min(560,y)); if(j===X.length-1) y=300+off*10; k1.push(y);
+    }
+    K[1].push(k1);
+    var k2;
+    if(i<AHORA){var o=(i-(AHORA-1)/2)*4;k2=[300+off*2.2,300+o,300+o,135+o,105+o,110+o,160+o,300+o*.3,300+o*.3];}
+    else{var o2=(i-AHORA-4)*8;k2=[300+off*2.2,300+o2*.3,300+o2*.3,430+o2,505+o2,480+o2,430+o2,300+o2*.2,300+o2*.2];
+      if(i===CAE2){k2=k2.slice(0,5).concat([560,680,690,700]);}}
+    K[2].push(k2);
+  }
+  // colores por estado: diseño (ink), real (gris), rediseño (ultramar / ultramar suave / gris)
+  var C0=[14,18,64],C1=[91,96,120],UL=[43,59,255],US=[149,157,255];
+  function col(i,k){if(k===0)return C0;if(k===1)return C1;return i<AHORA?UL:(i===CAE2?C1:US);}
+  function anch(i,k){return k===0?2.2:k===1?1.4:(i<AHORA?3.6:(i===CAE2?1.4:2));}
+  var paths=[];for(var i2=0;i2<L;i2++){var p=document.createElementNS(NS,'path');g.appendChild(p);paths.push(p);}
+  function d(ys){var pts=X.map(function(x,j){return[x,ys[j]];}),s='M'+pts[0][0]+' '+pts[0][1];
+    for(var j=0;j<pts.length-1;j++){var p0=pts[Math.max(j-1,0)],p1=pts[j],p2=pts[j+1],p3=pts[Math.min(j+2,pts.length-1)];
+      s+='C'+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+' '+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+' '+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+' '+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+' '+p2[0]+' '+p2[1].toFixed(1);}
+    return s;}
+  function suave(t){t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);}
+  function mezcla(a,b,t){return a+(b-a)*t;}
+  var ets=sec.querySelectorAll('.tr-et'), textos=sec.querySelectorAll('.tr-texto'), botones=sec.querySelectorAll('.tr-indice button');
+  function pintar(pr){
+    // pr: 0..2 (estado continuo). Entre enteros, transformación; cerca de los enteros, quieto.
+    var k=Math.min(Math.floor(pr),1), t=suave((pr-k-.18)/.64);
+    for(var i=0;i<L;i++){
+      var a=K[k][i],b=K[k+1][i],ys=a.map(function(v,j){return mezcla(v,b[j],t);});
+      var ca=col(i,k),cb=col(i,k+1),c=ca.map(function(v,j){return Math.round(mezcla(v,cb[j],t));});
+      paths[i].setAttribute('d',d(ys));paths[i].style.stroke='rgb('+c.join(',')+')';paths[i].style.strokeWidth=mezcla(anch(i,k),anch(i,k+1),t);
+    }
+    var est=pr<.6?0:pr<1.6?1:2;
+    textos.forEach(function(x){x.classList.toggle('activo',+x.dataset.e===est);});
+    botones.forEach(function(x){x.parentNode.classList.toggle('activo',+x.dataset.ir===est);});
+    ets.forEach(function(x){var kk=+x.dataset.k;x.style.opacity=kk===1?Math.max(0,1-Math.abs(pr-1)*2.2):Math.max(0,(pr-1.75)*4);});
+  }
+  if(reduce){pintar(2);sec.querySelectorAll('.tr-texto').forEach(function(x){x.classList.add('activo');});return;}
+  sec.classList.add('tr-js');
+  function prog(){var r=sec.getBoundingClientRect(),total=sec.offsetHeight-window.innerHeight;return Math.max(0,Math.min(1,-r.top/Math.max(total,1)));}
+  var pend=false;function act(){pend=false;pintar(prog()*2);}
+  window.addEventListener('scroll',function(){if(!pend){pend=true;requestAnimationFrame(act);}},{passive:true});
+  window.addEventListener('resize',act);
+  botones.forEach(function(b){b.addEventListener('click',function(){var total=sec.offsetHeight-window.innerHeight,obj=sec.getBoundingClientRect().top+window.scrollY+total*(+b.dataset.ir/2);window.scrollTo({top:obj,behavior:'smooth'});});});
+  act();
+  var barrido=sec.querySelector('.tr-barrido');
+  function barrer(){var t0=null;function f(ts){t0=t0||ts;var t=suave((ts-t0)/1500);barrido.setAttribute('width',String(-40+1340*t));if(t<1)requestAnimationFrame(f);}barrido.setAttribute('width','0');requestAnimationFrame(f);}
+  if('IntersectionObserver' in window){barrido.setAttribute('width','0');var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){barrer();io.disconnect();}},{threshold:.25});io.observe(sec.querySelector('.tr-lienzo'));}
 })();
 </script>
+</section>
 
 
 <section class="sec" aria-labelledby="hallazgo-t">
