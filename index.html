@@ -40,7 +40,7 @@
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a href="/" class="nav-logo"><img src="/assets/logo-apilado.svg" alt="Campus Latina" width="148" height="44"></a>
+    <a href="/" class="nav-logo"><img src="/assets/campus-latina.svg" alt="Campus Latina" width="148" height="42"></a>
     <nav class="nav-links" aria-label="Principal"><a href="/quienes-somos">Por qué existimos</a><a href="/como-trabajamos">Cómo trabajamos</a><a href="/notas/">Notas</a><a href="https://diagnostico.campuslatina.com/" class="btn">Hacer el diagnóstico</a></nav>
     <button class="nav-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
   </div>
@@ -48,11 +48,11 @@
 </header>
 <main>
 <section class="hero" aria-labelledby="hero-t">
-  <svg class="ala" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false"><path d="M90 930C200 560 520 210 975 45C915 140 875 205 845 268C650 360 420 565 90 930Z"/><path d="M90 930C370 615 600 432 915 338C875 410 845 462 812 512C610 572 382 710 90 930Z"/><path d="M90 930C392 755 610 652 880 600C840 662 806 708 765 748C568 770 360 828 90 930Z"/></svg>
+  <canvas class="campo" data-campo="hero" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="hero-txt">
       <span class="etiqueta">Admisión universitaria · Latinoamérica</span>
-      <h1 class="display" id="hero-t">La matrícula se define <em>después</em> del primer contacto.</h1>
+      <h1 class="display" id="hero-t">La matrícula se define <em class="hi">después</em> del primer contacto.</h1>
       <p class="bajada">Campus Latina diseña y opera el proceso de admisión y los primeros pasos del estudiante, para que más aspirantes se inscriban y más estudiantes se queden.</p>
       <div class="acciones"><a href="https://diagnostico.campuslatina.com/" class="btn">Hacer el diagnóstico gratuito →</a><a href="/como-trabajamos" class="enlace">Cómo trabajamos</a></div>
       <p class="hero-dato">10 minutos · Gratis · Informe en PDF</p>
@@ -62,30 +62,30 @@
 
 <section class="sim" aria-labelledby="sim-t">
 <style>
-.sim{background:var(--azul-noche);color:var(--blanco);padding-block:var(--space-6) var(--space-6);--ink-muted:#B7BBD6;--rule:#2A2F6E;--accent:var(--ultramar-claro);--on-accent:var(--azul-noche);overflow:hidden}
+.sim{background:var(--petroleo-noche);color:var(--blanco);padding-block:var(--space-6) var(--space-6);--ink-muted:#A9C2C6;--rule:#1E3D44;--accent:var(--agua);--on-accent:var(--petroleo-noche);overflow:hidden}
 .sim-cab{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-6);align-items:end}
 .sim-cab .bajada{color:var(--ink-muted);max-width:46ch}
 .sim-barra{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3) var(--space-4);margin-top:var(--space-5)}
 .sim-ctrl{display:inline-flex;border:1px solid var(--rule)}
 .sim-ctrl button{font:600 15px/20px var(--sans);color:var(--ink-muted);background:none;border:0;padding:12px 18px;cursor:pointer;transition:background-color .2s,color .2s}
 .sim-ctrl button:hover{color:var(--blanco)}
-.sim-ctrl button[aria-pressed="true"]{background:var(--blanco);color:var(--azul-noche)}
-.sim-ctrl button[data-modo="intencion"][aria-pressed="true"]{background:var(--ultramar-claro)}
+.sim-ctrl button[aria-pressed="true"]{background:var(--blanco);color:var(--petroleo-noche)}
+.sim-ctrl button[data-modo="intencion"][aria-pressed="true"]{background:var(--coral);color:var(--petroleo-noche)}
 .sim-auto{font-size:13px;color:var(--ink-muted)}
 .sim-escena{position:relative;max-width:1360px;margin:var(--space-3) auto 0;padding-inline:clamp(8px,2vw,32px)}
 .sim-escena canvas{display:block;width:100%;height:clamp(420px,calc(100vh - 340px),640px)}
 .sim-vivo{position:absolute;right:clamp(16px,4vw,64px);bottom:8px;display:grid;justify-items:end;gap:2px;text-align:right;pointer-events:none}
 .sim-vivo b{font-size:clamp(64px,8vw,128px);line-height:.85;letter-spacing:-.06em;font-variant-numeric:tabular-nums;color:var(--blanco);transition:color .3s}
-.sim-vivo.intencion b{color:var(--ultramar-claro)}
+.sim-vivo.intencion b{color:var(--coral)}
 .sim-vivo span{font-size:15px;color:var(--ink-muted)}
-.sim-vivo .perdidos{color:#FF8C7A;font-weight:600}
+.sim-vivo .perdidos{color:#A9C2C6;font-weight:600}
 .sim-fuentes{display:none;font-size:13px;color:var(--ink-muted);margin-top:var(--space-3)}
 .sim-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);border-top:1px solid var(--rule);padding-top:var(--space-5);margin-top:var(--space-4)}
 .sim-res>div{display:grid;gap:6px;align-content:start;opacity:.55;transition:opacity .3s}
 .sim-res>div.activo{opacity:1}
 .sim-res .rot{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
 .sim-res b{font-size:clamp(52px,6.4vw,96px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.sim-res .intencion b{color:var(--ultramar-claro)}
+.sim-res .intencion b{color:var(--coral)}
 .sim-res span{color:var(--ink-muted);font-size:15px;max-width:30ch}
 .sim-pie{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-4);margin-top:var(--space-6)}
 .sim-pie .chico{max-width:52ch}
@@ -132,7 +132,7 @@
   var sec=document.querySelector('.sim'); if(!sec) return;
   var cv=sec.querySelector('canvas'), ctx=cv.getContext('2d');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var COL={linea:'rgba(255,255,255,.13)',lineaOn:'rgba(255,255,255,.34)',rapido:'rgba(138,147,255,.75)',texto:'rgba(255,255,255,.74)',fuerte:'#FFFFFF',acento:'#8A93FF',fondo:'#0E1240',cae:'255,140,122'};
+  var COL={linea:'rgba(255,255,255,.13)',lineaOn:'rgba(255,255,255,.34)',rapido:'rgba(127,214,222,.8)',texto:'rgba(255,255,255,.74)',fuerte:'#FFFFFF',acento:'#7FD6DE',fondo:'#0A2329',cae:'154,168,171',meta:'#FF6B4A'};
 
   // Nodos en coordenadas normalizadas del layout horizontal (x: flujo, y: alto)
   var N={
@@ -220,7 +220,7 @@
     if(modo==='intencion'){ctx.save();ctx.setLineDash([4,7]);ctx.strokeStyle=COL.lineaOn;ctx.lineWidth=1.6;ctx.beginPath();ctx.ellipse(LOOP.x,LOOP.y,LOOP.rx,LOOP.ry,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
     var nodos=FUENTES.concat(['web','lan','wa']).concat(modo==='lineal'?LIN:['dec','resp','ases','insc','dia']);
     nodos.forEach(function(k){var p=P[k],dec=k==='dec',fin=k==='dia';
-      ctx.beginPath();ctx.arc(p.x,p.y,dec?9:fin?6:4,0,Math.PI*2);ctx.fillStyle=fin?COL.acento:COL.fondo;ctx.fill();
+      ctx.beginPath();ctx.arc(p.x,p.y,dec?9:fin?6:4,0,Math.PI*2);ctx.fillStyle=fin?COL.meta:COL.fondo;ctx.fill();
       ctx.lineWidth=dec?3:2;ctx.strokeStyle=dec?COL.acento:'rgba(255,255,255,.8)';ctx.stroke();});
     nodos.forEach(function(k){etiqueta(k,N[k].l,k==='dec'||k==='dia'?'fuerte':(modo==='intencion'&&(k==='resp'||k==='ases'))?'acento':'');});
     if(modo==='intencion'){var p=vert?{x:LOOP.x,y:LOOP.y}:{x:LOOP.x,y:LOOP.y+LOOP.ry+18};ctx.font='500 13px "Schibsted Grotesk",Arial,sans-serif';ctx.fillStyle=COL.texto;ctx.textAlign='center';ctx.textBaseline=vert?'middle':'top';ctx.fillText(vert?'Sin presión':N.loop.l,p.x,p.y);}
@@ -286,7 +286,7 @@
   function dibujarParticulas(){
     ps.forEach(function(p){
       if(p.estado==='espera'||(p.estado==='fin'&&!p.cx))return;
-      var rapido=p.rapido||p.d.ahora, col=modo==='lineal'?'255,255,255':rapido?'138,147,255':'255,255,255';
+      var rapido=p.rapido||p.d.ahora, col=modo==='lineal'?'255,255,255':rapido?'255,107,74':'255,255,255';
       if(p.estado==='cae'||(p.estado==='fin'&&p.cx)){
         var a=Math.max(p.vida||0,0)/2.4;if(a<=0)return;
         ctx.strokeStyle='rgba('+COL.cae+','+Math.min(1,a*1.4)+')';ctx.lineWidth=2;var s=5;
@@ -394,7 +394,7 @@
   <div class="wrap">
     <div class="pie-grid">
       <div>
-        <a href="/" class="pie-logo"><img src="/assets/logo-apilado-sobre-oscuro.svg" alt="Campus Latina" width="175" height="52"></a>
+        <a href="/" class="pie-logo"><img src="/assets/campus-latina-sobre-oscuro.svg" alt="Campus Latina" width="184" height="52"></a>
         <p class="pie-desc">Socio de crecimiento de universidades en Latinoamérica. Diseñamos y operamos el proceso de admisión y los primeros pasos del estudiante.</p>
       </div>
       <div><h2>Campus Latina</h2><ul><li><a href="/quienes-somos">Por qué existimos</a></li><li><a href="/como-trabajamos">Cómo trabajamos</a></li><li><a href="/notas/">Notas</a></li></ul></div>
@@ -408,5 +408,6 @@
 b.addEventListener('click',function(){var o=p.hidden;p.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');});
 var s=function(){n.classList.toggle('scrolled',window.scrollY>8)};s();window.addEventListener('scroll',s,{passive:true});})();
 </script>
+<script src="/assets/campo.js" defer></script>
 </body>
 </html>
