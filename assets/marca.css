@@ -41,15 +41,16 @@ p{text-wrap:pretty}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
-.sec{padding-block:var(--space-7)}
+/* El alto de pantalla también manda: en notebooks bajas los bloques se comprimen para leerse enteros. */
+.sec{padding-block:clamp(48px,10svh,96px)}
 .sec.alt{background:var(--surface-alt)}
 .sec.noche{background:var(--petroleo-noche);color:var(--blanco);--ink-muted:#A9C2C6;--rule:#1E3D44;--accent:var(--agua);--on-accent:var(--petroleo-noche)}
-@media(max-width:760px){.sec{padding-block:var(--space-6)}}
+@media(max-width:760px){.sec{padding-block:clamp(40px,8svh,64px)}}
 
 /* ---------- tipografía ---------- */
 .etiqueta{display:block;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3)}
-.display{font-size:clamp(42px,6.4vw,84px);line-height:.98;letter-spacing:-.04em}
-.titulo-1{font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-.035em}
+.display{font-size:clamp(40px,min(6.4vw,9.4svh),84px);line-height:.98;letter-spacing:-.04em}
+.titulo-1{font-size:clamp(32px,min(4.4vw,7svh),56px);line-height:1.02;letter-spacing:-.035em}
 .titulo-2{font-size:clamp(26px,3vw,36px);line-height:1.08;letter-spacing:-.025em}
 .titulo-3{font-size:20px;line-height:26px;font-weight:600;letter-spacing:-.01em}
 .display em,.titulo-1 em,.titulo-2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
@@ -99,22 +100,23 @@ p{text-wrap:pretty}
 .display em.hi,.titulo-1 em.hi{color:var(--ink)}
 
 /* ---------- portada ---------- */
-.hero{position:relative;overflow:hidden;padding-block:var(--space-7) var(--space-8)}
-.hero-txt{position:relative;max-width:min(640px,58%);display:grid;gap:var(--space-4)}
+.hero{position:relative;overflow:hidden;padding-block:clamp(32px,8svh,96px) clamp(40px,11svh,144px)}
+.hero-txt{position:relative;max-width:min(680px,58%);display:grid;gap:clamp(14px,2.6svh,24px)}
+.hero-txt .bajada{max-width:50ch}
 .hero-txt .etiqueta{margin-bottom:0}
-.hero-txt .acciones{margin-top:var(--space-3)}
+.hero-txt .acciones{margin-top:clamp(4px,1.4svh,16px)}
 .hero-dato{font-size:14px;color:var(--ink-muted)}
 @media(max-width:860px){
-  .hero{padding-top:var(--space-6);padding-bottom:min(70vw,440px)}
+  .hero{padding-top:clamp(24px,5svh,64px);padding-bottom:min(70vw,440px)}
   .hero-txt{max-width:none}
 }
 
 /* cabecera de páginas internas */
-.cabecera{position:relative;overflow:hidden;padding-block:var(--space-7) var(--space-7)}
+.cabecera{position:relative;overflow:hidden;padding-block:clamp(40px,9svh,96px)}
 .cabecera-txt{position:relative;max-width:min(760px,66%);display:grid;gap:var(--space-4)}
 .cabecera-txt .etiqueta{margin-bottom:0}
 @media(max-width:860px){
-  .cabecera{padding-top:var(--space-6);padding-bottom:min(46vw,300px)}
+  .cabecera{padding-top:clamp(24px,5svh,64px);padding-bottom:min(46vw,300px)}
   .cabecera-txt{max-width:none}
 }
 
@@ -142,7 +144,11 @@ p{text-wrap:pretty}
 .cita{font-family:var(--serif);font-size:clamp(22px,2.2vw,28px);line-height:1.3;letter-spacing:-.01em;padding-left:var(--space-4);border-left:2px solid var(--accent);margin-block:var(--space-5);max-width:34ch}
 
 /* ---------- pasos (secuencia real) ---------- */
-.pasos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);margin-top:var(--space-6);counter-reset:paso;list-style:none;padding:0}
+/* Cabecera en dos columnas (título | bajada): ahorra alto para que se vea el contenido de la sección. */
+.cab-2{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-6);align-items:end}
+.cab-2 .titulo-1{max-width:none!important;text-wrap:balance}
+@media(max-width:860px){.cab-2{grid-template-columns:1fr;gap:var(--space-4)}}
+.pasos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);margin-top:clamp(24px,5svh,64px);counter-reset:paso;list-style:none;padding:0}
 .pasos li{border-top:2px solid var(--ink);padding-top:var(--space-4);display:grid;gap:var(--space-2);align-content:start}
 .pasos li::before{counter-increment:paso;content:counter(paso,decimal-leading-zero);font-size:14px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
 .pasos p{color:var(--ink-muted);font-size:16px;line-height:1.55}
