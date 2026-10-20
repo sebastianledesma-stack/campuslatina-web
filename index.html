@@ -245,9 +245,11 @@
   var vivo=sec.querySelector('.sim-vivo'),vN=vivo.querySelector('[data-v="n"]'),vP=vivo.querySelector('[data-v="p"]');
   function pintarTotales(final){
     vN.textContent=final?TOT[modo].llegan:cuenta[modo];vP.textContent=final?(100-TOT[modo].llegan-TOT[modo].seguimiento):cuenta.perdidos;vivo.classList.toggle('intencion',modo==='intencion');
-    elN.lineal.textContent=(modo==='lineal'&&!final)?cuenta.lineal:TOT.lineal.llegan;
-    elN.intencion.textContent=(modo==='intencion'&&!final)?cuenta.intencion:TOT.intencion.llegan;
-    elN.seguimiento.textContent=(modo==='intencion'&&!final)?cuenta.seguimiento:TOT.intencion.seguimiento;
+    // Los resultados de arriba son siempre los totales de cada proceso (la comparación no cambia);
+    // la cuenta en vivo de la vuelta actual va solo en el contador grande del lienzo.
+    elN.lineal.textContent=TOT.lineal.llegan;
+    elN.intencion.textContent=TOT.intencion.llegan;
+    elN.seguimiento.textContent=TOT.intencion.seguimiento;
   }
   function iniciar(m){
     modo=m;reloj=0;fase='corre';cuenta={lineal:0,intencion:0,seguimiento:0,perdidos:0};
