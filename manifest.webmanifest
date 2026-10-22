@@ -1,0 +1,11 @@
+{
+  "name": "Campus Latina",
+  "short_name": "Campus Latina",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#0A2329",
+  "background_color": "#FFFFFF",
+  "display": "browser"
+}

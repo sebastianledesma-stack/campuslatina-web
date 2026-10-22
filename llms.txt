@@ -2,6 +2,8 @@
 
 > Campus Latina es el socio de crecimiento de universidades en Latinoamérica. Diseña y opera el proceso de admisión y los primeros pasos del estudiante para que más aspirantes se conviertan en estudiantes y más estudiantes se queden. Oficinas en Buenos Aires y Montevideo. Razón social: Campus Argentina S.A.
 
+Propósito: existimos para que cada persona que quiere estudiar llegue a su primer día de clases. Empezamos ayudando a las universidades a encontrar estudiantes y entendimos que no alcanzaba: hoy acompañamos el camino entero, desde que nace la intención de estudiar hasta el primer día de clases. Para la universidad, el resultado es más inscriptos con los mismos interesados.
+
 Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, con datos auditables en cada una. Resultados publicados: más de 2,5 millones de jóvenes y adultos alcanzados en procesos de admisión en los últimos 5 años, más de 200.000 estudiantes matriculados en grado, pregrado y posgrado, y una reducción de 10 puntos en la deserción temprana en universidades socias.
 
 ## Páginas
@@ -22,6 +24,12 @@ Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, c
 - [Diagnóstico del proceso de inscripción](https://diagnostico.campuslatina.com/): autoevaluación de 28 preguntas (unos 10 minutos) que muestra en qué etapa pierde inscriptos una universidad, con informe en PDF.
 - [Guía de las 7 etapas del proceso de inscripción universitaria](https://diagnostico.campuslatina.com/guia/): descubrimiento, exploración, activación, acompañamiento, decisión, inscripción y retención temprana.
 - [Resumen para modelos de lenguaje del diagnóstico](https://diagnostico.campuslatina.com/llms.txt)
+
+## Alianzas
+CIE LATAM (comunidad de instituciones educativas que usan Salesforce), REALCUP (Red de Asociaciones Latinoamericanas y Caribeñas de Universidades Privadas), Salesforce, Botmaker y Claude.
+
+## Texto completo
+- [Todo el sitio en texto plano](https://campuslatina.com/llms-full.txt): portada, propósito, método y las notas completas.
 
 ## Contacto
 - contacto@campuslatina.com

@@ -26,9 +26,9 @@
     # Bloquea acceso a APIs sensibles del navegador que no usamos
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 
-    # CSP relajada: permite Google Fonts (que ya usamos) e imágenes/data-URIs inline
+    # CSP: las tipografías se sirven desde el sitio; imágenes/data-URIs inline y Google Analytics
     # Si en algún momento agregamos analytics o scripts externos, hay que ampliarla acá.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
 # ---------------------------------------------------------------
 # Cache agresivo para assets estáticos versionados (fuentes, imágenes que subamos)
@@ -42,6 +42,22 @@
   for = "/*.woff"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Logos (de la marca y de las alianzas) e íconos: cambian muy poco; 30 días en el navegador.
+[[headers]]
+  for = "/assets/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/aliados/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
 
 # ---------------------------------------------------------------
 # HTML: cache corto para poder republicar rápido sin problemas de stale
