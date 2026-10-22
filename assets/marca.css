@@ -1,4 +1,4 @@
-/* Campus Latina — identidad final: verde petróleo con coral
+/* Campus Latina — identidad final: verde petróleo con ámbar
    Tokens y reglas: manual de identidad. Una idea por pantalla, un solo recurso gráfico (el campo de líneas), esquinas rectas. */
 
 :root{
@@ -6,8 +6,9 @@
   --petroleo:#0B6470;
   --agua:#7FD6DE;
   --bruma:#EAF3F4;
-  --coral:#FF6B4A;
-  --coral-claro:#FFB9A8;
+  --ambar:#F08C1A;
+  --ambar-luz:#FFAE4A;
+  --ambar-claro:#FFCF8A;
   --blanco:#FFFFFF;
   --gris:#4D6166;
   --linea:#D5E3E5;
@@ -17,7 +18,7 @@
   --ink:var(--petroleo-noche);
   --ink-muted:var(--gris);
   --accent:var(--petroleo);
-  --destaque:var(--coral);
+  --destaque:var(--ambar);
   --on-accent:var(--blanco);
   --rule:var(--linea);
 
@@ -95,8 +96,8 @@ p{text-wrap:pretty}
 }
 
 /* ---------- el campo de líneas (recurso gráfico) y el resaltador ---------- */
-.campo{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;--campo:var(--petroleo);--campo-destaque:var(--coral)}
-.hi{background:linear-gradient(transparent 58%,var(--coral-claro) 58%,var(--coral-claro) 92%,transparent 92%);padding-inline:.06em}
+.campo{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;--campo:var(--petroleo);--campo-destaque:var(--ambar)}
+.hi{background:linear-gradient(transparent 58%,var(--ambar-claro) 58%,var(--ambar-claro) 92%,transparent 92%);padding-inline:.06em}
 .display em.hi,.titulo-1 em.hi{color:var(--ink)}
 
 /* ---------- portada ---------- */
