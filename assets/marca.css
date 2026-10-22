@@ -163,6 +163,11 @@ p{text-wrap:pretty}
 .resultados b{display:block;font-size:clamp(44px,5vw,64px);line-height:1;font-weight:700;letter-spacing:-.045em}
 .resultados b.destaque{color:var(--ambar-luz)} /* la cifra protagonista de la franja, una sola */
 .resultados span{display:block;margin-top:var(--space-3);color:var(--ink-muted);font-size:16px;line-height:1.45;max-width:26ch}
+/* Alianzas: una fila de logos en una sola tinta (blanco sobre petróleo noche), mismo peso visual, sin color propio */
+.alianzas{margin-top:var(--space-6);display:grid;gap:var(--space-4)}
+.alianzas ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4) var(--space-6)}
+.alianzas img{display:block;width:auto;height:var(--h,28px);opacity:.88}
+@media(max-width:760px){.alianzas ul{gap:var(--space-4) var(--space-5)}.alianzas img{height:calc(var(--h,28px)*.82)}}
 .resultados-pie{margin-top:var(--space-6);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--rule);padding-top:var(--space-4);color:var(--ink-muted);font-size:15px}
 @media(max-width:760px){.resultados{grid-template-columns:1fr;gap:var(--space-5)}.resultados div{padding:0;border:0}}
 
