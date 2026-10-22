@@ -161,6 +161,7 @@ p{text-wrap:pretty}
 .resultados div{padding-inline:var(--space-5);border-left:1px solid var(--rule)}
 .resultados div:first-child{padding-left:0;border-left:0}
 .resultados b{display:block;font-size:clamp(44px,5vw,64px);line-height:1;font-weight:700;letter-spacing:-.045em}
+.resultados b.destaque{color:var(--ambar-luz)} /* la cifra protagonista de la franja, una sola */
 .resultados span{display:block;margin-top:var(--space-3);color:var(--ink-muted);font-size:16px;line-height:1.45;max-width:26ch}
 .resultados-pie{margin-top:var(--space-6);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--rule);padding-top:var(--space-4);color:var(--ink-muted);font-size:15px}
 @media(max-width:760px){.resultados{grid-template-columns:1fr;gap:var(--space-5)}.resultados div{padding:0;border:0}}
