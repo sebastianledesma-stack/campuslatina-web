@@ -1,5 +1,4 @@
 # Fuerza el dominio apex como canónico (consolida SEO y evita duplicados)
-http://www.campuslatina.com/*     https://campuslatina.com/:splat    301!
 https://www.campuslatina.com/*    https://campuslatina.com/:splat    301!
 
 # El diagnóstico vive en su subdominio (app aparte, repo diagnostico-campuslatina).
