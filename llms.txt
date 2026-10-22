@@ -13,11 +13,11 @@ Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, c
 
 ## Notas
 - [Construir para el movimiento](https://campuslatina.com/notas/construir-para-el-movimiento) (2026-09)
-- [Por qué la mayoría de las universidades decide sin datos — y qué hacer al respecto](https://campuslatina.com/notas/cultura-de-evidencias-universidades) (2026-08)
+- [Por qué la mayoría de las universidades decide sin datos y qué hacer al respecto](https://campuslatina.com/notas/cultura-de-evidencias-universidades) (2026-08)
 - [El bot no es la solución. El proceso que lo rodea, sí](https://campuslatina.com/notas/bot-no-es-la-solucion-proceso-admisiones) (2026-08)
-- [Qué pasa cuando un joven le pregunta a una IA qué estudiar — y su universidad no aparece](https://campuslatina.com/notas/universidad-visibilidad-ia-llm) (2026-07)
+- [Qué pasa cuando un joven le pregunta a una IA qué estudiar y su universidad no aparece](https://campuslatina.com/notas/universidad-visibilidad-ia-llm) (2026-07)
 - [Lo que los datos de 2026 confirman sobre cómo elige el estudiante latinoamericano](https://campuslatina.com/notas/como-elige-el-estudiante-latinoamericano-2026) (2026-07)
-- [Por qué el aspirante abandona antes de inscribirse — y cómo evitarlo](https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse) (2026-06)
+- [Por qué el aspirante abandona antes de inscribirse y cómo evitarlo](https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse) (2026-06)
 - [El diseño del proceso es la estrategia](https://campuslatina.com/notas/el-diseno-del-proceso-es-la-estrategia) (2026-06)
 
 ## Diagnóstico gratuito

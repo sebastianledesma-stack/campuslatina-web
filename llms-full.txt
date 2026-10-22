@@ -128,7 +128,7 @@ La singularidad no es que la IA nos superó. Es que dejamos de poder predecir. Y
 
 - Ago 2026
 
-#### Por qué la mayoría de las universidades decide sin datos — y qué hacer al respecto
+#### Por qué la mayoría de las universidades decide sin datos y qué hacer al respecto
 
 Casi todas las instituciones tienen la tecnología para decidir con evidencia. Muy pocas la están usando para eso. La diferencia no es técnica — es cultural.
 
@@ -505,7 +505,7 @@ URL: https://campuslatina.com/notas/cultura-de-evidencias-universidades
 
 ← Notas
 
-## Por qué la mayoría de las universidades decide sin datos — y qué hacer al respecto
+## Por qué la mayoría de las universidades decide sin datos y qué hacer al respecto
 
 Casi todas las instituciones tienen la tecnología para decidir con evidencia. Muy pocas la están usando para eso. La diferencia no es técnica — es cultural.
 
@@ -629,12 +629,12 @@ Hacer el diagnóstico gratuito →
 
 ---
 
-# Por qué el aspirante abandona antes de inscribirse — y cómo evitarlo — Campus Latina
+# Por qué el aspirante abandona antes de inscribirse y cómo evitarlo — Campus Latina
 URL: https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse
 
 ← Notas
 
-## Por qué el aspirante abandona antes de inscribirse — y cómo evitarlo
+## Por qué el aspirante abandona antes de inscribirse y cómo evitarlo
 
 El abandono en admisión rara vez es por falta de interés. Casi siempre es por falta de diseño. Entender la diferencia cambia todo.
 
@@ -711,7 +711,7 @@ URL: https://campuslatina.com/notas/universidad-visibilidad-ia-llm
 
 ← Notas
 
-## Qué pasa cuando un joven le pregunta a una IA qué estudiar — y su universidad no aparece
+## Qué pasa cuando un joven le pregunta a una IA qué estudiar y su universidad no aparece
 
 Los motores de inteligencia artificial ya son parte del proceso de decisión educativa. Las instituciones que no estén presentes ahí están cediendo terreno sin saberlo.
 
