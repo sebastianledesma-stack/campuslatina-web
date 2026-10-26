@@ -12,6 +12,7 @@ Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, c
 - [Cómo trabajamos](https://campuslatina.com/como-trabajamos): las 4 etapas del método y preguntas frecuentes.
 
 ## Notas
+- [Diseño conversacional en universidades: la arquitectura de información como decisión financiera](https://campuslatina.com/notas/diseno-conversacional-whatsapp-universidades) (2026-10), por Jimena Dominguez
 - [Construir para el movimiento](https://campuslatina.com/notas/construir-para-el-movimiento) (2026-09)
 - [Por qué la mayoría de las universidades decide sin datos y qué hacer al respecto](https://campuslatina.com/notas/cultura-de-evidencias-universidades) (2026-08)
 - [El bot no es la solución. El proceso que lo rodea, sí](https://campuslatina.com/notas/bot-no-es-la-solucion-proceso-admisiones) (2026-08)
