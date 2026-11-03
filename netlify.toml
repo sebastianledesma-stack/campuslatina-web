@@ -28,7 +28,9 @@
 
     # CSP: las tipografías se sirven desde el sitio; imágenes/data-URIs inline y Google Analytics
     # Si en algún momento agregamos analytics o scripts externos, hay que ampliarla acá.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    # script.google.com y script.googleusercontent.com: el formulario de /realcup/cocktail envía las respuestas
+    # a la planilla del evento (Apps Script responde con una redirección a googleusercontent).
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://script.google.com https://script.googleusercontent.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
 # ---------------------------------------------------------------
 # Cache agresivo para assets estáticos versionados (fuentes, imágenes que subamos)

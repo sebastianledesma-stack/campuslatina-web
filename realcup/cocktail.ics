@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Campus Latina//Cocktail REALCUP 2026//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cocktail-realcup-2026@campuslatina.com
+DTSTAMP:20261102T120000Z
+DTSTART:20261111T003000Z
+DTEND:20261111T030000Z
+SUMMARY:Cocktail SheerID y Campus Latina · REALCUP 2026
+LOCATION:Hotel Sheraton Guayaquil\, Av. Joaquín Orrantia González\, frente al Mall del Sol\, Guayaquil
+DESCRIPTION:Cocktail de bienvenida la noche previa a la apertura de REALCUP Guayaquil 2026.\nhttps://campuslatina.com/realcup/cocktail
+URL:https://campuslatina.com/realcup/cocktail
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Cocktail SheerID y Campus Latina
+END:VALARM
+END:VEVENT
+END:VCALENDAR
