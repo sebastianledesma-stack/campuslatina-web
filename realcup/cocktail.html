@@ -76,7 +76,12 @@
 .campo-f{display:grid;gap:6px}
 .campo-f label,.grupo legend{font-size:14px;line-height:18px;font-weight:600}
 .campo-f label span,.grupo legend span{color:var(--ink-muted);font-weight:400}
-.form input[type=text],.form input[type=email]{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--blanco);border:1px solid #BCD0D3;border-radius:0;padding:13px 14px;-webkit-appearance:none;appearance:none}
+.form input[type=text],.form input[type=email],.form select{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--blanco);border:1px solid #BCD0D3;border-radius:0;padding:13px 14px;-webkit-appearance:none;appearance:none}
+.form select{padding-right:40px;cursor:pointer;background:var(--blanco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230A2329' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center}
+.form select:invalid{color:var(--ink-muted)}
+.form select option{color:var(--ink)}
+.form select:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.form select[aria-invalid=true]{border-color:#B4432A}
 .form input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
 .form input[aria-invalid=true]{border-color:#B4432A}
 .dos-campos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4)}
@@ -153,10 +158,17 @@
           <div class="campo-f"><label for="f-cargo">Cargo</label><input type="text" id="f-cargo" name="cargo" autocomplete="organization-title" required maxlength="120"></div>
         </div>
         <div class="dos-campos">
-          <div class="campo-f"><label for="f-pais">País</label><input type="text" id="f-pais" name="pais" list="paises" autocomplete="country-name" required maxlength="60"></div>
+          <div class="campo-f"><label for="f-pais">País</label>
+            <!-- Desplegable para que la planilla tenga los países escritos siempre igual; «Otro país» abre un campo libre. -->
+            <select id="f-pais" name="pais" autocomplete="country-name" required>
+              <option value="" selected disabled>Elegir país</option>
+              <option>Argentina</option><option>Bolivia</option><option>Brasil</option><option>Chile</option><option>Colombia</option><option>Costa Rica</option><option>Cuba</option><option>Ecuador</option><option>El Salvador</option><option>España</option><option>Estados Unidos</option><option>Guatemala</option><option>Honduras</option><option>México</option><option>Nicaragua</option><option>Panamá</option><option>Paraguay</option><option>Perú</option><option>Puerto Rico</option><option>República Dominicana</option><option>Uruguay</option><option>Venezuela</option>
+              <option value="Otro">Otro país</option>
+            </select>
+          </div>
           <div class="campo-f"><label for="f-email">Correo electrónico</label><input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" required maxlength="160"></div>
         </div>
-        <datalist id="paises"><option>Argentina</option><option>Bolivia</option><option>Brasil</option><option>Chile</option><option>Colombia</option><option>Costa Rica</option><option>Ecuador</option><option>El Salvador</option><option>España</option><option>Estados Unidos</option><option>Guatemala</option><option>Honduras</option><option>México</option><option>Nicaragua</option><option>Panamá</option><option>Paraguay</option><option>Perú</option><option>Puerto Rico</option><option>República Dominicana</option><option>Uruguay</option><option>Venezuela</option></datalist>
+        <div class="campo-f" id="g-pais-otro" hidden><label for="f-pais-otro">¿Qué país?</label><input type="text" id="f-pais-otro" name="pais_otro" maxlength="60"></div>
 
         <fieldset class="grupo">
           <legend>¿Confirma su asistencia?</legend>
@@ -218,11 +230,14 @@
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyZ6SV-Jk9yK6r7pl3oWSzZcGgi-eMd7uM6MvhVsK2DZjfKzg3e-7aGFnW3Jm2HXap07A/exec';
   var form = document.getElementById('form'), listo = document.getElementById('listo'), aviso = document.getElementById('aviso');
   var boton = document.getElementById('enviar'), gR = document.getElementById('g-restriccion'), gD = document.getElementById('g-detalle');
+  var gP = document.getElementById('g-pais-otro');
 
   function valor(n) { var e = form.elements[n]; return e ? String(e.value || '').trim() : ''; }
   function asiste() { var e = form.querySelector('input[name=asiste]:checked'); return e ? e.value : ''; }
+  function pais() { return valor('pais') === 'Otro' ? valor('pais_otro') : valor('pais'); }
 
   form.addEventListener('change', function (ev) {
+    if (ev.target.name === 'pais') { gP.hidden = ev.target.value !== 'Otro'; if (!gP.hidden) form.elements.pais_otro.focus(); }
     if (ev.target.name === 'asiste') {
       gR.hidden = asiste() !== 'Sí';
       boton.textContent = asiste() === 'No' ? 'Enviar respuesta →' : 'Enviar confirmación →';
@@ -238,6 +253,8 @@
       var e = form.elements[n], ok = valor(n) !== '' && (n !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor(n)));
       if (ok) e.removeAttribute('aria-invalid'); else { e.setAttribute('aria-invalid', 'true'); faltan.push(e); }
     });
+    var otro = form.elements.pais_otro;
+    if (valor('pais') === 'Otro' && !valor('pais_otro')) { otro.setAttribute('aria-invalid', 'true'); faltan.push(otro); } else otro.removeAttribute('aria-invalid');
     if (!asiste()) faltan.push(form.querySelector('input[name=asiste]'));
     return faltan;
   }
@@ -253,7 +270,7 @@
     }
     var r = form.querySelector('input[name=restriccion]:checked');
     var datos = {
-      nombre: valor('nombre'), institucion: valor('institucion'), cargo: valor('cargo'), pais: valor('pais'),
+      nombre: valor('nombre'), institucion: valor('institucion'), cargo: valor('cargo'), pais: pais(),
       email: valor('email'), asiste: asiste(),
       restriccion: asiste() === 'Sí' && r ? r.value : '', detalle: asiste() === 'Sí' && r && r.value === 'Alergia u otra' ? valor('detalle') : '',
       web: valor('web')

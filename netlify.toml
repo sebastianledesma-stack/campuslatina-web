@@ -94,3 +94,10 @@
 
 [build.processing.images]
   compress = true
+
+# Encabezado de los correos del cocktail (REALCUP): se puede leer desde otro origen para incrustarlo en el
+# script de la planilla (los correos lo llevan adjunto, así se ve aunque el lector bloquee imágenes externas).
+[[headers]]
+  for = "/realcup/mail-encabezado.jpg"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
