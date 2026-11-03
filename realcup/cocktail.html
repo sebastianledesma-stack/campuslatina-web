@@ -95,11 +95,11 @@
 .trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .aviso{font-size:15px;color:#B4432A}
 
-/* respuesta registrada */
-.listo{background:var(--surface-alt);padding:clamp(24px,4vw,48px);display:grid;gap:var(--space-4)}
-.listo .titulo-2 em{font-family:var(--serif);font-style:italic;font-weight:400}
-.listo p{color:var(--ink-muted);max-width:52ch}
-.listo .acciones{gap:var(--space-3) var(--space-5)}
+/* respuesta registrada (no usar .listo: campo.js se la pone al lienzo cuando lo dibuja) */
+.ev-listo{background:var(--surface-alt);padding:clamp(24px,4vw,48px);display:grid;gap:var(--space-4)}
+.ev-listo .titulo-2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.ev-listo p{color:var(--ink-muted);max-width:52ch}
+.ev-listo .acciones{gap:var(--space-3) var(--space-5)}
 
 .ev-pie{background:var(--petroleo-noche);color:var(--blanco);padding-block:var(--space-6) var(--space-5);--ink-muted:#A9C2C6;--rule:#1E3D44}
 .ev-pie .ev-marcas{padding:0}
@@ -184,7 +184,7 @@
         <p class="chico">Usamos estos datos solo para organizar este encuentro, junto con SheerID y REALCUP.</p>
       </form>
 
-      <div class="listo" id="listo" tabindex="-1" hidden>
+      <div class="ev-listo" id="listo" tabindex="-1" hidden>
         <span class="etiqueta" id="listo-et">Asistencia confirmada</span>
         <h2 class="titulo-2" id="listo-t"></h2>
         <p id="listo-p"></p>
