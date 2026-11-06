@@ -691,6 +691,56 @@ Hacer el diagnóstico gratuito →
 
 ---
 
+# IA en admisiones: la pregunta no es si usarla, sino para qué — Campus Latina
+URL: https://campuslatina.com/notas/ia-en-admisiones-para-que
+
+← Notas
+
+## IA en admisiones: la pregunta no es si usarla, sino para qué
+
+La pregunta correcta no es si conviene usar inteligencia artificial en admisiones. Es para qué, y con qué proceso alrededor.
+
+Por Sebastián Ledesma, cofundador de Campus Latina Noviembre 2026 2 min de lectura
+
+En los últimos meses, casi todas las universidades con las que conversamos tienen alguna iniciativa de inteligencia artificial en marcha o en evaluación: un asistente en WhatsApp, respuestas automáticas, calificación de aspirantes. La pregunta correcta no es si conviene usar inteligencia artificial en admisiones. Es para qué, y con qué proceso alrededor.
+
+### Cuatro condiciones que separan lo que funciona de lo que no
+
+En el trabajo con distintas instituciones, encontramos un patrón consistente: las iniciativas de IA en admisiones que realmente mejoran la conversión comparten cuatro condiciones. Las que fallan, casi siempre, fallan en alguna de estas cuatro.
+
+- Datos integrados, no aislados. Sin un CRM y un registro unificado del aspirante, el bot responde pero no aprende. Cada conversación queda desconectada de la anterior, y el equipo humano que retoma el contacto empieza de cero.
+
+- Diseño conversacional con criterio humano. Quién responde, con qué información, y en qué momento conviene que intervenga una persona. Esto no se resuelve con tecnología: se resuelve con diseño de proceso.
+
+- Métricas que importan. El volumen de conversaciones no dice nada sobre si el proceso funciona. Lo que importa es la trazabilidad: cuánto tiempo pasa entre el primer mensaje y la respuesta efectiva, y cuántas conversaciones avanzan hacia un paso concreto del proceso.
+
+- Gobernanza, no solo software. Comprar una herramienta no es lo mismo que tener un equipo que itere los flujos, ajuste las reglas y mejore la experiencia con el tiempo. La IA necesita mantenimiento de criterio, no solo mantenimiento técnico.
+
+### Antes de sumar tecnología, mirar el proceso
+
+Una herramienta de IA amplifica lo que ya existe. Si el proceso de admisión está ordenado, lo acelera. Si tiene puntos ciegos, los multiplica.
+
+Por eso, antes de evaluar qué solución incorporar, conviene hacerse una pregunta más simple: ¿dónde se pierden hoy los aspirantes de su institución?
+
+Nuestro diagnóstico gratuito recorre las 7 etapas del proceso de inscripción en 10 minutos y entrega las acciones ordenadas por impacto.
+
+Porque cada camino merece llegar.
+
+Para profundizar
+
+Activación: cómo responder a tiempo las consultas de aspirantes · Acompañamiento: cómo sostener el interés mientras deciden
+
+Y sobre el bot y el proceso que lo rodea: El bot no es la solución. El proceso que lo rodea, sí.
+
+### ¿Su universidad sabe para qué usa la IA en admisiones?
+
+El diagnóstico gratuito de Campus Latina muestra en qué etapas del proceso de inscripción se pierden hoy sus aspirantes, antes de sumar tecnología.
+
+Hacer el diagnóstico gratuito →
+
+
+---
+
 # Por qué el aspirante abandona antes de inscribirse y cómo evitarlo — Campus Latina
 URL: https://campuslatina.com/notas/por-que-el-aspirante-abandona-antes-de-inscribirse
 
