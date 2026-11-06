@@ -1,6 +1,11 @@
 # Fuerza el dominio apex como canónico (consolida SEO y evita duplicados)
 https://www.campuslatina.com/*    https://campuslatina.com/:splat    301!
 
+# Archivos de trabajo del repo (instructivo para Claude y scripts): están en el repo pero no se publican.
+/CLAUDE.md          /404.html    404!
+/herramientas/*     /404.html    404!
+/.claude/*          /404.html    404!
+
 # El diagnóstico vive en su subdominio (app aparte, repo diagnostico-campuslatina).
 # La página vieja redirige con 301: no se pierden enlaces externos ni posicionamiento.
 /diagnostico        https://diagnostico.campuslatina.com/    301!
