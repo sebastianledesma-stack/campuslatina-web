@@ -1,0 +1,8 @@
+# Saltos de línea LF en todas las computadoras (en Windows, Git los cambiaría a CRLF al clonar
+# y los scripts de herramientas/ dejarían de reconocer los archivos).
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.woff2 binary
+# Las páginas de eventos (y su .ics, que por norma usa CRLF) quedan exactamente como están.
+realcup/** -text
