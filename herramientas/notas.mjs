@@ -19,7 +19,8 @@ const hoy = new Date().toISOString().slice(0, 10);
 const revisar = process.argv.includes("--revisar");
 const rehacer = new Set(process.argv.filter((a) => a.startsWith("--texto=")).map((a) => a.slice(8)));
 
-const leer = (f) => readFileSync(join(RAIZ, f), "utf8");
+// Los saltos de línea se normalizan por si el repo se clonó en Windows con CRLF.
+const leer = (f) => readFileSync(join(RAIZ, f), "utf8").replace(/\r\n/g, "\n");
 const sinEtiquetas = (s) => s.replace(/<[^>]+>/g, "");
 const entidades = (s) => s.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 const escapar = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
