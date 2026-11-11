@@ -53,6 +53,10 @@ p{text-wrap:pretty}
 .sec.alt{background:var(--surface-alt)}
 .sec.noche{background:var(--petroleo-noche);color:var(--blanco);--ink-muted:#A9C2C6;--rule:#1E3D44;--accent:var(--agua);--on-accent:var(--petroleo-noche)}
 @media(max-width:760px){.sec{padding-block:clamp(40px,8svh,64px)}}
+/* Video con los controles del navegador. Va pegado a la cabecera; el borde lo separa del fondo blanco y
+   el margen de desplazamiento deja ver la etiqueta debajo del menú cuando se llega con #video. */
+.sec-video{padding-top:0;scroll-margin-top:96px}
+.video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--rule)}
 
 /* ---------- tipografía ---------- */
 .etiqueta{display:block;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3)}
