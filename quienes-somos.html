@@ -70,10 +70,21 @@
 <section class="sec sec-video" id="video" aria-labelledby="video-t">
   <div class="wrap">
     <h2 class="etiqueta" id="video-t">En un minuto</h2>
-    <video class="video" controls playsinline preload="none" width="1920" height="1080" poster="/assets/video/uno-campus-latina.jpg" aria-label="Video: por qué existimos, en un minuto" aria-describedby="video-texto">
-      <source src="/assets/video/uno-campus-latina.mp4" type="video/mp4">
-      <a href="/assets/video/uno-campus-latina.mp4">Descargar el video (MP4, 27 MB)</a>
-    </video>
+    <div class="video-marco">
+      <video class="video" id="video-uno" controls playsinline preload="none" width="1920" height="1080" poster="/assets/video/uno-campus-latina.jpg" aria-label="Video: por qué existimos, en un minuto" aria-describedby="video-texto">
+        <source src="/assets/video/uno-campus-latina.mp4" type="video/mp4">
+        <a href="/assets/video/uno-campus-latina.mp4">Descargar el video (MP4, 27 MB)</a>
+      </video>
+      <button class="video-play" type="button" aria-label="Ver el video, con sonido" hidden><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="currentColor"/><path d="M35 29v42l37.3-21z" fill="#fff"/></svg></button>
+    </div>
+    <script>
+    /* Portada limpia con botón propio: los controles del navegador aparecen recién al dar play (Safari oscurece
+       la portada si están desde el principio). Al terminar vuelve el botón sobre el logo. Sin JavaScript quedan los controles. */
+    (function(){var v=document.getElementById('video-uno'),b=v&&v.parentNode.querySelector('.video-play');if(!b)return;
+    v.controls=false;b.hidden=false;
+    b.addEventListener('click',function(){b.hidden=true;v.controls=true;v.focus();var p=v.play();if(p&&p.catch)p.catch(function(){b.hidden=false;v.controls=false;});});
+    v.addEventListener('ended',function(){v.controls=false;b.hidden=false;});})();
+    </script>
     <p class="chico" style="margin-top:var(--space-3)">Texto en pantalla y música, sin voz: se puede ver sin sonido.</p>
     <p class="sr" id="video-texto">Un contador sube de uno a más de 200.000 mientras se suman las líneas de cada camino. El texto dice: Una persona que quiere estudiar. Con su historia, su lugar, sus tiempos. Otra persona. Otro camino. Ninguno se parece a otro. Empezamos conectando personas con universidades. Entendimos que no alcanzaba. Había que acompañar el camino entero: desde que nace la intención de aprender hasta el primer día de clases. Buscamos soluciones pensadas para cada región, cada familia, cada persona. Porque la educación cambia vidas, comunidades y futuro. Acercarla es tarea de todos. Más de 200.000 estudiantes ya recorrieron ese camino con nosotros. Y cada uno contó como el primero. Porque cada camino merece llegar.</p>
   </div>
