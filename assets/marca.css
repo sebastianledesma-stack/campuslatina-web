@@ -253,6 +253,8 @@ p{text-wrap:pretty}
 .cuerpo .callout-label{display:block;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-2)}
 .cuerpo .stat-inline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);border-block:1px solid var(--rule);padding-block:var(--space-4);margin-block:var(--space-5)}
 .cuerpo .stat .val{display:block;font-size:44px;line-height:1;font-weight:700;letter-spacing:-.045em;color:var(--accent)}
+.cuerpo .figura{margin-block:var(--space-6)}
+.cuerpo .figura img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
 .cuerpo .stat .label{display:block;margin-top:var(--space-2);font-size:15px;color:var(--ink-muted)}
 @media(max-width:560px){.cuerpo{font-size:18px}.cuerpo .callout{padding:var(--space-4)}}
 
