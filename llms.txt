@@ -12,6 +12,7 @@ Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, c
 - [Cómo trabajamos](https://campuslatina.com/como-trabajamos): las 4 etapas del método y preguntas frecuentes.
 
 ## Notas
+- [El futuro se construye en conjunto](https://campuslatina.com/notas/el-futuro-se-construye-en-conjunto) (2026-11), por Marcelo Seoane
 - [IA en admisiones: la pregunta no es si usarla, sino para qué](https://campuslatina.com/notas/ia-en-admisiones-para-que) (2026-11), por Sebastián Ledesma
 - [Diseño conversacional en universidades: la arquitectura de información como decisión financiera](https://campuslatina.com/notas/diseno-conversacional-whatsapp-universidades) (2026-10), por Jimena Dominguez
 - [Construir para el movimiento](https://campuslatina.com/notas/construir-para-el-movimiento) (2026-09), por Sebastián Ledesma
