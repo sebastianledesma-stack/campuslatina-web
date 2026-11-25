@@ -64,13 +64,13 @@ Rediseñamos el proceso para reducir la fricción y llegar al aspirante cuando e
 
 #### Implementación
 
-Operamos junto a su equipo, desde el primer contacto hasta los primeros meses de cursada.
+Ponemos en marcha el proceso rediseñado, con su equipo y con la tecnología que ya tiene.
 
 -
 
-#### Iteración
+#### Operación conjunta
 
-Medimos con datos auditables y ajustamos el proceso de forma continua.
+Operamos lo implementado junto a su universidad, medimos y ajustamos. La matrícula crece de forma sostenida, ciclo tras ciclo.
 
 Ver cómo trabajamos →
 
@@ -283,13 +283,13 @@ Entregables: Nuevo flujo de admisión · Guiones de contacto · Reglas de automa
 
 Etapa 3
 Implementación
-Operamos el proceso junto a su equipo. Acompañamos los primeros pasos del estudiante, desde el contacto inicial hasta los primeros meses de cursada, que es cuando se decide si esa persona se queda.
-Entregables: Operación conjunta · Acompañamiento de los primeros meses · Integración con su equipo
+Ponemos en marcha el proceso rediseñado junto a su equipo, con la tecnología que su universidad ya tiene siempre que sea posible. Los flujos, los guiones de contacto y las reglas de automatización pasan a funcionar con aspirantes reales.
+Entregables: Proceso en funcionamiento · Integración con sus herramientas · Integración con su equipo
 
 Etapa 4
-Iteración
-Medimos con datos auditables y ajustamos de forma continua. El proceso de admisión se revisa y mejora todo el tiempo, a medida que cambian el contexto, la competencia y el comportamiento de los aspirantes.
-Entregables: Reportes auditables · Ajustes continuos · Revisión periódica
+Operación conjunta
+Operamos lo implementado junto a su universidad. Acompañamos a cada aspirante desde el contacto inicial hasta los primeros meses de cursada, medimos con datos auditables y ajustamos de forma continua. En la operación se produce la escala: la matrícula crece de forma sostenida, ciclo tras ciclo.
+Entregables: Operación conjunta · Acompañamiento de los primeros meses · Reportes auditables · Ajustes continuos
 
 Detrás del método
 
@@ -311,10 +311,10 @@ Preguntas frecuentes
 
 ### Sobre cómo trabajamos.
 
-¿Cuánto dura todo el proceso?Depende de cada institución y de qué tan profundo sea el rediseño necesario. Lo constante es el orden: diagnóstico, diseño, implementación e iteración, con datos auditables en cada etapa.
+¿Cuánto dura todo el proceso?Depende de cada institución y de qué tan profundo sea el rediseño necesario. Lo constante es el orden: diagnóstico, diseño, implementación y operación conjunta, con datos auditables en cada etapa.
 ¿Necesitamos cambiar nuestro CRM o herramientas actuales?No necesariamente. Trabajamos con la tecnología que ya tienen siempre que sea posible. El foco está en el diseño del proceso, no en imponer una herramienta nueva.
-¿Quién implementa los cambios, ustedes o nuestro equipo?Trabajamos junto a su equipo, no en su lugar. La etapa de implementación es conjunta: acompañamos la operación para que el conocimiento quede también del lado de la universidad.
-¿Qué pasa si el proceso no funciona como esperábamos?Para eso existe la etapa de iteración. El proceso se mide con datos auditables todo el tiempo y se ajusta según lo que esos datos muestran. No se diseña una vez y se abandona.
+¿Quién implementa los cambios, ustedes o nuestro equipo?Trabajamos junto a su equipo, no en su lugar. Implementamos el proceso con su equipo y después lo operamos en conjunto, para que el conocimiento quede también del lado de la universidad.
+¿Qué pasa si el proceso no funciona como esperábamos?Para eso la operación es continua. El proceso se mide con datos auditables todo el tiempo y se ajusta según lo que esos datos muestran. No se diseña una vez y se abandona.
 
 ### ¿Quiere ver este sistema aplicado a su universidad?
 
