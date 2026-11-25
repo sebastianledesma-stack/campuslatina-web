@@ -4,7 +4,7 @@
 
 Propósito: existimos para que cada persona que quiere estudiar llegue a su primer día de clases. Empezamos ayudando a las universidades a encontrar estudiantes y entendimos que no alcanzaba: hoy acompañamos el camino entero, desde que nace la intención de estudiar hasta el primer día de clases. Para la universidad, el resultado es más inscriptos con los mismos interesados.
 
-Trabaja en cuatro etapas: diagnóstico, diseño, implementación e iteración, con datos auditables en cada una. Resultados publicados: más de 2,5 millones de jóvenes y adultos alcanzados en procesos de admisión en los últimos 5 años, más de 200.000 estudiantes matriculados en grado, pregrado y posgrado, y una reducción de 10 puntos en la deserción temprana en universidades socias.
+Trabaja en cuatro etapas: diagnóstico, diseño, implementación y operación conjunta, con datos auditables en cada una. Resultados publicados: más de 2,5 millones de jóvenes y adultos alcanzados en procesos de admisión en los últimos 5 años, más de 200.000 estudiantes matriculados en grado, pregrado y posgrado, y una reducción de 10 puntos en la deserción temprana en universidades socias.
 
 ## Páginas
 - [Inicio](https://campuslatina.com/): qué hace Campus Latina y por qué el cuello de botella del crecimiento universitario está en el proceso de admisión.
