@@ -769,6 +769,98 @@ Hacer el diagnóstico gratuito →
 
 ---
 
+# Gobernanza de la inteligencia artificial en universidades: tener una política no es lo mismo que gobernarla — Campus Latina
+URL: https://campuslatina.com/notas/gobernanza-ia-universidades
+
+← Notas
+
+## Gobernanza de la inteligencia artificial en universidades: tener una política no es lo mismo que gobernarla
+
+La gobernanza de la inteligencia artificial en universidades es el conjunto de decisiones, responsables y mecanismos de evaluación que definen cómo una institución usa la IA y cómo verifica que ese uso funcione.
+
+Por Sebastián Ledesma, cofundador de Campus Latina Noviembre 2026 5 min de lectura
+
+Una política escrita es el primer paso. Gobernar implica que alguien con autoridad la apruebe, que tenga responsables y que se mida.
+
+En la nota anterior, IA en admisiones: la pregunta es para qué, hablamos de la herramienta. Aquí subimos un nivel: quién decide sobre la IA dentro de la universidad, con qué datos y cómo se sabe si está dando resultado.
+
+### ¿Las universidades de la región ya gobiernan la IA?
+
+La IA ya está en uso en las universidades, con o sin reglas. Según el Global Skills Report 2026 de Coursera y Udemy, más del 95% de los estudiantes y docentes consultados usa herramientas de IA, pero solo el 26% de los docentes dice que su institución tiene una política formal.
+
+Una medición reciente en México muestra que incluso tener la política no alcanza. El Índice Campus de Gobernanza Universitaria (ICGU) 2026 evaluó a 22 instituciones de educación superior:
+
+- 14 tienen una política de inteligencia artificial.
+
+- Solo 3 la aprobaron en un órgano colegiado.
+
+- El promedio fue de 40,65 sobre 100, lo que ubica al conjunto en el nivel “En desarrollo”.
+
+- La dimensión más rezagada son las capacidades docentes digitales (35,7).
+
+La muestra es de un solo país y la participación fue voluntaria, pero el patrón es reconocible en toda la región: hay uso, hay documentos, falta formalización.
+
+### ¿Qué distingue una política de IA de una gobernanza real?
+
+Una política dice qué se permite. La gobernanza asegura que eso se cumpla y se ajuste con el tiempo. En la práctica, se apoya en tres elementos:
+
+- Aprobación colegiada. La política tiene peso institucional cuando la aprueba un consejo superior u otro órgano de gobierno, no solo un área.
+
+- Responsables definidos. Alguien coordina, responde dudas y toma decisiones cuando aparece un caso nuevo.
+
+- Ciclo de mejora. Las medidas se evalúan y se corrigen. En el ICGU 2026, solo 6 de las 22 instituciones evalúan si sus medidas de integridad académica funcionan.
+
+Sin estos tres elementos, la política queda como un documento bien intencionado mientras el uso real avanza por su cuenta.
+
+### ¿Por qué admisiones también necesita gobernanza de IA?
+
+El debate sobre IA en la universidad suele centrarse en el aula: evaluaciones, integridad académica, uso docente. Pero uno de los frentes donde la IA ya opera todos los días es la admisión:
+
+- Asistentes conversacionales que responden a aspirantes por WhatsApp o en la web.
+
+- Calificación automática de interesados, que decide a quién contacta primero el equipo comercial.
+
+- Datos personales de aspirantes, que pasan por formularios, CRM y herramientas externas.
+
+Cada uno de estos usos toma decisiones que afectan a personas que todavía no son estudiantes: qué información reciben, cuándo los atiende un humano y qué se hace con sus datos. Si la política de IA no incluye la admisión, deja afuera el primer contacto de la universidad con quienes quiere sumar.
+
+### Tres preguntas que un consejo superior debería poder responder hoy
+
+- ¿Quién decide sobre la IA en nuestra institución? ¿Hay un órgano que aprobó la política y un responsable que la coordina, también para admisiones y atención al aspirante?
+
+- ¿Con qué datos trabaja y cómo los protegemos? ¿Sabemos qué herramientas usan datos de estudiantes y aspirantes, y bajo qué reglas?
+
+- ¿Cómo sabemos si funciona? ¿Medimos los resultados de la IA, como tiempos de respuesta, consultas resueltas o derivaciones a una persona, y los revisamos con alguna frecuencia?
+
+Si alguna respuesta es “no lo sabemos”, ahí está el próximo paso.
+
+### Preguntas frecuentes
+
+¿Qué es la gobernanza de la inteligencia artificial en universidades? Es el sistema de decisiones, responsables y evaluación que define cómo una institución usa la IA y verifica sus resultados. Incluye la política, pero también quién la aprueba, quién la coordina y cómo se mide.
+
+¿Alcanza con tener una política de IA? No. La política es el punto de partida. Sin aprobación institucional, responsables y evaluación periódica, el uso real de la IA avanza sin control.
+
+¿La gobernanza de IA aplica a admisiones? Sí. Asistentes virtuales, calificación de interesados y manejo de datos de aspirantes son usos de IA que requieren reglas claras y protección de datos personales.
+
+En Campus Latina acompañamos a universidades de la región en el proceso de admisión completo, incluido el diseño y la medición de asistentes con IA. Si quiere saber en qué etapa se pierden hoy sus aspirantes, puede hacer nuestro diagnóstico gratuito.
+
+Porque cada camino merece llegar.
+
+Para profundizar
+
+Activación: cómo responder a tiempo las consultas de aspirantes · Acompañamiento: cómo sostener el interés mientras deciden
+
+Y sobre cómo diseñar los asistentes que atienden a sus aspirantes: Diseño conversacional en universidades: la arquitectura de información como decisión financiera.
+
+### ¿Quién decide sobre la IA que atiende a sus aspirantes?
+
+El diagnóstico gratuito de Campus Latina muestra en qué etapas del proceso de admisión se pierden hoy sus aspirantes, incluidas las que ya atienden asistentes con IA.
+
+Hacer el diagnóstico gratuito →
+
+
+---
+
 # IA en admisiones: la pregunta no es si usarla, sino para qué — Campus Latina
 URL: https://campuslatina.com/notas/ia-en-admisiones-para-que
 
